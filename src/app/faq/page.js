@@ -1,10 +1,7 @@
 // pages/faq.js
 import React from 'react';
 import Link from 'next/link';
-
 import { Phone, Mail, Clock } from 'lucide-react';
-import { motion } from 'framer-motion';
-
 
 export const metadata = {
   title: "Frequently Asked Questions | Sri Siddi Vinayaka Home Care",
