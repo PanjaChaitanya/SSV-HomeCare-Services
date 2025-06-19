@@ -35,7 +35,7 @@ export default function Home() {
           <div className="text-center">
             <Image src="/icons/clock.png" alt="24/7 Availability" width={64} height={64} className="mx-auto mb-4" />
             <h3 className="text-xl font-semibold">24/7 Availability</h3>
-            <p className="text-gray-600 mt-2">We’re always available — any time, any day — to support your family’s needs.</p>
+            <p className="text-gray-600 mt-2">We&apos;re always available — any time, any day — to support your family&apos;s needs.</p>
           </div>
           <div className="text-center">
             <Image src="/icons/plan.png" alt="Customized Plans" width={64} height={64} className="mx-auto mb-4" />
@@ -100,7 +100,7 @@ export default function Home() {
           <h2 className="text-3xl font-bold text-blue-900">About Us</h2>
           <p className="text-gray-700 mt-4">
             Sri Siddi Vinayaka Home Care Services was founded with the mission to bring compassionate,
-            professional care into the homes of families across Andhra Pradesh. Whether it’s a child,
+            professional care into the homes of families across Andhra Pradesh. Whether it&apos;s a child,
             an elder, or a recovering loved one — we treat every person like our own.
           </p>
           <Link href="/about">
@@ -114,7 +114,7 @@ export default function Home() {
             {/* Contact CTA */}
       <section className="bg-blue-700 text-white py-12 px-6 text-center">
         <h2 className="text-2xl font-semibold">Need Help? Call us now at <a href="tel:+919000000000" className="underline">+91 90000 00000</a></h2>
-        <p className="mt-2">We're just one call away from caring for your family.</p>
+        <p className="mt-2">We&apos;re just one call away from caring for your family.</p>
       </section>
     </main>
   )
