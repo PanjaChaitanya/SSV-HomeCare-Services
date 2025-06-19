@@ -104,9 +104,9 @@ const Navbar = () => {
                   <Phone size={18} />
                   <span className="font-medium">+91 98765 43210</span>
                 </a>
-                <Button className="w-full mt-2 gradient-cta text-white">
+                <button className="w-full mt-2 gradient-cta text-white">
                   Join Us
-                </Button>
+                </button>
               </div>
             </nav>
           </div>
