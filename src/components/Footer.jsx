@@ -1,18 +1,122 @@
 import Link from 'next/link'
-
+import { Phone, Clock,Users,Mail } from 'lucide-react'
 export default function Footer() {
   return (
-    <footer className="bg-blue-50 text-center text-sm text-gray-700 py-6 mt-16">
-      <div className="space-y-2">
-        <p>© 2025 Sri Siddi Vinayaka Home Care Services. All rights reserved.</p>
-        <div className="space-x-4">
-          <Link href="/">Home</Link>
-          <Link href="/about">About</Link>
-          <Link href="/services">Services</Link>
-          <Link href="/contact">Contact</Link>
+    <>
+      <footer className="bg-gray-900 text-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* Company Info */}
+          <div className="col-span-1 lg:col-span-2">
+            <div className="flex items-center space-x-3 mb-4">
+              <div className="w-10 h-10 bg-gradient-cta rounded-full flex items-center justify-center">
+                <span className="text-white font-bold text-lg">S</span>
+              </div>
+              <div>
+                <h3 className="text-xl font-bold">Sri Siddi Vinayaka</h3>
+                <p className="text-sm text-gray-300">Home Care Services</p>
+              </div>
+            </div>
+            <p className="text-gray-300 mb-6 max-w-md">
+              Providing trusted, compassionate home care services with experienced caregivers. 
+              Your family's comfort and well-being is our priority.
+            </p>
+            
+            {/* Contact Info */}
+            <div className="space-y-3">
+              <div className="flex items-center space-x-3">
+                <Phone size={18} className="text-care-blue-400" />
+                <span>+91 98765 43210</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <Mail size={18} className="text-care-blue-400" />
+                <span>info@srisiddivinayakahomecare.com</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <Clock size={18} className="text-care-blue-400" />
+                <span>24/7 Emergency Support Available</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Quick Links */}
+          <div>
+            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
+            <ul className="space-y-2">
+              <li>
+                <Link href="/" className="text-gray-300 hover:text-white transition-colors">
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link href="/about" className="text-gray-300 hover:text-white transition-colors">
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link href="/services" className="text-gray-300 hover:text-white transition-colors">
+                  Our Services
+                </Link>
+              </li>
+              <li>
+                <Link href="/testimonials" className="text-gray-300 hover:text-white transition-colors">
+                  Testimonials
+                </Link>
+              </li>
+              <li>
+                <Link href="/faq" className="text-gray-300 hover:text-white transition-colors">
+                  FAQ
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="text-gray-300 hover:text-white transition-colors">
+                  Contact Us
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Services */}
+          <div>
+            <h4 className="text-lg font-semibold mb-4">Our Services</h4>
+            <ul className="space-y-2">
+              <li className="text-gray-300">Child Care</li>
+              <li className="text-gray-300">Elder Care</li>
+              <li className="text-gray-300">Housekeeping</li>
+              <li className="text-gray-300">Cooking Support</li>
+              <li className="text-gray-300">Bedridden Patient Care</li>
+            </ul>
+            
+            {/* Trust Badges */}
+            <div className="mt-6 space-y-2 text-green-400">
+              <div className="flex items-center space-x-2 text-care-green-400">
+                <Users size={16} />
+                <span className="text-sm">Certified Caregivers</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Clock size={16} />
+                <span className="text-sm">10+ Years Experience</span>
+              </div>
+            </div>
+          </div>
         </div>
-        <p className="text-xs text-gray-500">Designed with ❤️ by Chaitanya</p>
+
+        {/* Bottom Bar */}
+        <div className="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+          <p className="text-gray-400 text-sm">
+            © 2024 Sri Siddhi Vinayaka Home Care Services. All rights reserved.
+          </p>
+          <div className="flex space-x-6 mt-4 md:mt-0">
+            <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">
+              Privacy Policy
+            </a>
+            <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">
+              Terms of Service
+            </a>
+          </div>
+        </div>
       </div>
     </footer>
+    </>
   )
 }

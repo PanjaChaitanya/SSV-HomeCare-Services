@@ -102,7 +102,7 @@ export default function ContactPage() {
       {/* Google Map */}
       <section className="mt-16 px-6">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl font-bold text-blue-800 text-center mb-6">📍 Our Location</h2>
+          <h2 className="text-2xl font-bold text-blue-800 text-center mb-6">Office Location</h2>
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3824.557719669604!2d81.53317847413894!3d16.548411426433805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a37d3004350d2a1%3A0x318786da5b3f8772!2sSRI%20SIDDHI%20VINAYAKA%20HOME%20CARE%20SERVICES!5e0!3m2!1sen!2sin!4v1750308618645!5m2!1sen!2sin"
             width="100%"

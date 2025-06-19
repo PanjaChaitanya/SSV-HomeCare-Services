@@ -25,7 +25,6 @@ export default function ServicesPage() {
   return (
     <>
       
-
       <section className="bg-blue-50 px-6 py-20 text-center">
         <h1 className="text-4xl font-bold text-blue-900">Tailored Care Services to Meet Your Needs</h1>
         <p className="mt-4 max-w-2xl mx-auto text-lg text-gray-700">
