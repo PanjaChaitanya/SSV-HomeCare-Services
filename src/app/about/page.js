@@ -72,7 +72,7 @@ export default function AboutPage() {
           About <span className="text-sky-600">Sri Siddi Vinayaka</span>
         </h1>
         <p className="text-lg max-w-3xl mx-auto mb-6">
-          For over a decade, we've been delivering heartfelt home care that brings peace, comfort,
+          For over a decade, we&apos;ve been delivering heartfelt home care that brings peace, comfort,
           and dignity to families across the region.
         </p>
         <Link
@@ -182,7 +182,7 @@ export default function AboutPage() {
       {/* CTA */}
       <section className="py-20 bg-sky-600 text-white text-center animate-fade-in">
         <h2 className="text-3xl font-bold mb-4">Join Our Caring Family</h2>
-        <p className="text-lg mb-6">We’re here when you need us most. Let’s connect today.</p>
+        <p className="text-lg mb-6">We&apos;re here when you need us most. Let&apos;s connect today.</p>
         <Link
           href="/contact"
           className="inline-block px-6 py-3 bg-white text-sky-600 font-medium rounded-lg hover:bg-gray-100 transition"
