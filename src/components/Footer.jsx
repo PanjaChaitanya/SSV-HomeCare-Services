@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Phone, Clock,Users,Mail } from 'lucide-react'
+import { Phone, Clock,Users,Mail,Instagram, MessageCircle, Facebook } from 'lucide-react'
 export default function Footer() {
   return (
     <>
@@ -23,19 +23,54 @@ export default function Footer() {
             </p>
             
             {/* Contact Info */}
-            <div className="space-y-3">
+            <div className="space-y-3 mb-4 text-gray-300">
+              <ul className="space-y-2">
+                <li>Gadiyaram Street</li>
+                <li >Bhimavaram,534201</li>
+                <li>West Godavari, Andhra Pradesh</li>
+              </ul>
               <div className="flex items-center space-x-3">
-                <Phone size={18} className="text-care-blue-400" />
+                <Phone size={18} className="text-blue-400" />
                 <span>+91 98765 43210</span>
               </div>
               <div className="flex items-center space-x-3">
-                <Mail size={18} className="text-care-blue-400" />
+                <Mail size={18} className="text-blue-400" />
                 <span>info@srisiddivinayakahomecare.com</span>
               </div>
               <div className="flex items-center space-x-3">
-                <Clock size={18} className="text-care-blue-400" />
+                <Clock size={18} className="text-blue-400" />
                 <span>24/7 Emergency Support Available</span>
               </div>
+            </div>
+            {/* Social Links */}
+            <div className="flex space-x-6">
+              <a
+                href="https://www.facebook.com/YourPage"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-blue-600 transition-colors"
+                aria-label="Facebook"
+              >
+                <Facebook size={24} />
+              </a>
+              <a
+                href="https://wa.me/919876543210"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-green-500 transition-colors"
+                aria-label="WhatsApp"
+              >
+                <MessageCircle size={24} />
+              </a>
+              <a
+                href="https://www.instagram.com/yourprofile"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-pink-500 transition-colors"
+                aria-label="Instagram"
+              >
+                <Instagram size={24} />
+              </a>
             </div>
           </div>
 
@@ -44,32 +79,32 @@ export default function Footer() {
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
               <li>
-                <Link href="/" className="text-gray-300 hover:text-white transition-colors">
+                <Link href="/" className="text-gray-300 hover:text-yellow-300 transition-colors">
                   Home
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="text-gray-300 hover:text-white transition-colors">
+                <Link href="/about" className="text-gray-300 hover:text-yellow-300 transition-colors">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="text-gray-300 hover:text-white transition-colors">
+                <Link href="/services" className="text-gray-300 hover:text-yellow-300 transition-colors">
                   Our Services
                 </Link>
               </li>
               <li>
-                <Link href="/testimonials" className="text-gray-300 hover:text-white transition-colors">
+                <Link href="/testimonials" className="text-gray-300 hover:text-yellow-300 transition-colors">
                   Testimonials
                 </Link>
               </li>
               <li>
-                <Link href="/faq" className="text-gray-300 hover:text-white transition-colors">
+                <Link href="/faq" className="text-gray-300 hover:text-yellow-300 transition-colors">
                   FAQ
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-gray-300 hover:text-white transition-colors">
+                <Link href="/contact" className="text-gray-300 hover:text-yellow-300 transition-colors">
                   Contact Us
                 </Link>
               </li>
