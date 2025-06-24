@@ -229,7 +229,7 @@ export default function Services()  {
             Ready to Get Started?
           </h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Contact us today for a free consultation and let us create a personalized care plan that meets your family's unique needs and budget.
+            Contact us today for a free consultation and let us create a personalized care plan that meets your family&apos;s unique needs and budget.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact" className="bg-gray-500 text-blue-300 hover:bg-gray-100 text-lg px-8 py-4 rounded-md font-semibold">
