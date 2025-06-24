@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import {
   Users,
   User,
@@ -24,7 +25,7 @@ export const metadata = {
   },
 };
 
-const Services = () => {
+export default function Services()  {
   const services = [
     {
       title: 'Child Care Services',
@@ -114,7 +115,7 @@ const Services = () => {
       ],
       availability: '24/7 live-in care recommended',
       priceRange: '₹500 - ₹1,200 per hour',
-      image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=600&h=400&fit=crop'
+      image: '/images/cooking.jpg'
     }
   ];
 
@@ -134,13 +135,13 @@ const Services = () => {
             Comprehensive Home Care Services
           </h1>
           <p className="text-xl text-gray-600 leading-relaxed mb-8">
-            From child care to elder care, housekeeping to specialized patient care – we provide trusted, professional services that keep your family comfortable and safe at home.
+            From child care to elder care, housekeeping to specialized patient care - we provide trusted, professional services that keep your family comfortable and safe at home.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact" className="bg-care-blue-600 text-white text-lg px-8 py-4 rounded-md font-semibold hover:bg-care-blue-700 transition">
+            {/* <Link href="/contact" className="bg-care-blue-600 text-white text-lg px-8 py-4 rounded-md font-semibold hover:bg-care-blue-700 transition">
               Get Custom Care Plan
-            </Link>
-            <a href="tel:+919876543210" className="text-care-blue-600 border-2 border-care-blue-600 text-lg px-8 py-4 rounded-md font-semibold hover:bg-care-blue-600 hover:text-white transition flex items-center justify-center">
+            </Link> */}
+            <a href="tel:+919876543210" className="text-blue-300 border-2 border-blue-400 text-lg px-8 py-4 rounded-md font-semibold hover:bg-blue-500 hover:text-white transition flex items-center justify-center">
               <Phone className="mr-2" size={20} /> Call for Consultation
             </a>
           </div>
@@ -207,10 +208,12 @@ const Services = () => {
                 </div>
 
                 <div className={`${index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}`}>
-                  <img
+                  <Image
                     src={service.image}
                     alt={service.title}
-                    className="rounded-2xl shadow-xl w-full h-96 object-cover"
+                    width={800}
+                    height={400}
+                    className="rounded-2xl shadow-xl object-cover"
                   />
                 </div>
               </div>
@@ -242,4 +245,4 @@ const Services = () => {
   );
 };
 
-export default Services;
+
