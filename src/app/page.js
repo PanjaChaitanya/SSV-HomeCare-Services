@@ -1,4 +1,4 @@
-// src/app/page.tsx
+// src/app/page.js
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <main className="flex flex-col gap-16">
       {/* Hero Section */}
-      <section className="bg-blue-50 px-4 py-20 text-center">
+      <section className="px-4 py-20 text-center Hero-Section">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-bold text-blue-900">
             Compassionate Home Care Services You Can Trust

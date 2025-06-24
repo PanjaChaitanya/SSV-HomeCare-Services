@@ -77,7 +77,7 @@ const Navbar = () => {
             {/* Logo */}
             <Link href="/" className="flex items-center space-x-3">
               <div className="bg-gradient-cta rounded-full flex items-center justify-center">
-                <Image src="/logo.png" width={250} height={200}/>
+                <Image src="/logo.png" alt='logo' width={250} height={200}/>
               </div>
             </Link>
 
