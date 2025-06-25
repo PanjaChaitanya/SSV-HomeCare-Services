@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Users, Heart, Award, Clock, Shield, CheckCircle, Phone, Mail, Upload, Star, Home, Baby, Stethoscope, ChefHat} from 'lucide-react';
 
 export default function JoinUs() {
@@ -51,7 +52,7 @@ export default function JoinUs() {
                   Giver
                 </h1>
                 <p className="text-xl text-gray-600 leading-relaxed">
-                  Make a meaningful difference in families' lives while building a rewarding career 
+                  Make a meaningful difference in families&apos; lives while building a rewarding career 
                   in home care services. We&apos;re looking for compassionate, dedicated professionals 
                   to join our growing team.
                 </p>
@@ -91,9 +92,10 @@ export default function JoinUs() {
             
             <div className="relative">
               <div className="aspect-w-4 aspect-h-3 rounded-2xl overflow-hidden shadow-2xl">
-                <img
+                <Image
                   src="https://images.pexels.com/photos/7551667/pexels-photo-7551667.jpeg?auto=compress&cs=tinysrgb&w=800"
                   alt="Happy care team working together"
+                  fill
                   className="w-full h-full object-cover"
                 />
               </div>
