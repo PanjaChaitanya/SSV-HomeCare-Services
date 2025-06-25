@@ -105,11 +105,13 @@ const Navbar = () => {
                 className="flex items-center space-x-2 text-blue-400 hover:scale-105 animate-pulse transition-all"
               >
                 <Phone size={18} />
-                <span className="font-bold">+91 98765 43210</span>
+                <span className="font-bold">+91 </span>
               </a>
-              <button className="bg-gradient-to-tl text-gray-700 border-2 p-2 rounded-2xl btn-hover">
-                Join Us
-              </button>
+              <Link href='/join-us'>
+                <button className="bg-orange-200 text-orange-600 animate-pulse font-bold px-3 py-2 rounded-md text-sm hover:scale-105 cursor-pointer transition-all">
+                  Join Us
+                </button>
+              </Link>
             </div>
 
             {/* Mobile Menu Button */}
@@ -172,9 +174,11 @@ const Navbar = () => {
         >
           <Phone size={30} />
         </a>
-        <button className="bg-gradient-to-tl text-blue-400 border-1 px-4 py-2 rounded-xl btn-hover">
-          Join Us
-        </button>
+        <Link href='/join-us'>
+          <button className="bg-gradient-to-tl text-blue-400 border-1 px-4 py-2 rounded-xl">
+            Join Us
+          </button>
+        </Link>
       </div>
     </>
   );

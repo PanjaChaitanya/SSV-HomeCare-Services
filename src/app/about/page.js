@@ -39,48 +39,30 @@ const values = [
   }
 ];
 
-const team = [
-  {
-    name: 'Dr. Lakshmi Devi',
-    role: 'Founder & Medical Director',
-    experience: '15+ years in healthcare',
-    image: 'L.D.',
-    bio: 'Former hospital administrator with expertise in geriatric care and home healthcare management.'
-  },
-  {
-    name: 'Nurse Meera Patel',
-    role: 'Senior Care Coordinator',
-    experience: '12+ years nursing',
-    image: 'M.P.',
-    bio: 'Registered nurse specializing in elderly care and medication management.'
-  },
-  {
-    name: 'Ravi Sharma',
-    role: 'Operations Manager',
-    experience: '8+ years operations',
-    image: 'R.S.',
-    bio: 'Ensures seamless service delivery and maintains our high standards of care.'
-  }
-];
-
 export default function AboutPage() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-white to-sky-50 text-gray-800">
-      {/* Hero */}
-      <section className="py-16 px-6 text-center animate-slide-in">
-        <h1 className="text-4xl font-bold mb-4">
-          About <span className="text-sky-600">Sri Siddi Vinayaka</span>
-        </h1>
-        <p className="text-lg max-w-3xl mx-auto mb-6">
-          For over a decade, we&apos;ve been delivering heartfelt home care that brings peace, comfort,
-          and dignity to families across the region.
-        </p>
-        <Link
-          href="/contact"
-          className="inline-block mt-4 px-6 py-3 bg-sky-600 text-white rounded-lg hover:bg-sky-700 transition"
-        >
-          Connect With Us
-        </Link>
+      {/* About Company Founder*/}
+      <section className="py-10 px-6 text-center flex flex-wrap justify-around items-center animate-slide-in">
+        {/* Founder Image */}
+        <div>
+          <Image src="/images/founder.png" alt="Founder" width={300} height={300} className='rounded-full' />
+        </div>
+        <div className='flex-col items-center justify-center'>
+          <h1 className="text-4xl font-bold mb-4">
+            About <span className="text-sky-600">Sri Siddi Vinayaka</span>
+          </h1>
+          <p className="text-lg max-w-3xl mx-auto mb-6">
+            For over a decade, we&apos;ve been delivering heartfelt home care that brings peace, comfort,
+            and dignity to families across the region.
+          </p>
+          <Link
+            href="/contact"
+            className="inline-block mt-4 px-6 py-3 bg-sky-600 text-white rounded-lg hover:bg-sky-700 transition"
+          >
+            Connect With Us
+          </Link>
+        </div>
       </section>
 
       {/* Our Story */}
@@ -88,7 +70,7 @@ export default function AboutPage() {
         <h2 className="text-3xl font-semibold text-center mb-8">Our Story</h2>
         <div className="space-y-6 text-gray-700">
           <p>
-            Founded in 2013 by Dr. Lakshmi Devi, Sri Siddi Vinayaka Home Care Services was born
+            Founded in 2013 by Mr. Addagalla Ganapathi Rao &#40;B.com&#41;, Sri Siddi Vinayaka Home Care Services was born
             from a deep desire to improve the quality of life for families in need of compassionate,
             professional in-home care.
           </p>
@@ -126,33 +108,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Team */}
-      <section className="py-20 bg-sky-50 animate-slide-in">
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <h2 className="text-3xl font-bold mb-4">Meet Our Leadership</h2>
-          <p className="text-gray-600">
-            A committed team ensuring compassionate and professional home care.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4 max-w-7xl mx-auto">
-          {team.map((member, idx) => (
-            <div
-              key={idx}
-              className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition duration-300 text-center"
-            >
-              <div className="w-16 h-16 mx-auto rounded-full bg-gradient-to-tr from-sky-500 to-pink-400 text-white flex items-center justify-center text-xl font-bold mb-4">
-                {member.image}
-              </div>
-              <h3 className="font-semibold text-lg">{member.name}</h3>
-              <p className="text-sky-600 text-sm">{member.role}</p>
-              <p className="text-sm text-gray-500">{member.experience}</p>
-              <p className="mt-2 text-sm text-gray-600">{member.bio}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
       {/* Certifications & Experience */}
       <section className="py-20 bg-white animate-fade-in">
         <div className="text-center max-w-3xl mx-auto mb-12">
@@ -161,19 +116,19 @@ export default function AboutPage() {
             Certified, trained, and committed to excellence in home care
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 px-4 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 px-4 max-w-7xl mx-auto">
           <div className="bg-blue-100 p-6 rounded-xl text-center shadow-md">
             <div className="text-4xl font-bold text-sky-700 mb-2">10+</div>
             <h3 className="font-semibold text-lg mb-1">Years of Experience</h3>
             <p className="text-sm text-gray-600">Serving families with dedication since 2013</p>
           </div>
-          <div className="bg-green-100 p-6 rounded-xl text-center shadow-md">
+          {/* <div className="bg-green-100 p-6 rounded-xl text-center shadow-md">
             <div className="text-4xl font-bold text-green-700 mb-2">100%</div>
             <h3 className="font-semibold text-lg mb-1">Certified Caregivers</h3>
             <p className="text-sm text-gray-600">All staff are trained and background-verified</p>
-          </div>
+          </div> */}
           <div className="bg-orange-100 p-6 rounded-xl text-center shadow-md">
-            <div className="text-4xl font-bold text-orange-700 mb-2">500+</div>
+            <div className="text-4xl font-bold text-orange-700 mb-2">1000+</div>
             <h3 className="font-semibold text-lg mb-1">Families Served</h3>
             <p className="text-sm text-gray-600">Trusted by hundreds of satisfied families</p>
           </div>
