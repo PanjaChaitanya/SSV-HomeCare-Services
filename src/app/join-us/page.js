@@ -6,15 +6,15 @@ import Image from 'next/image';
 import { Users, Heart, Award, Clock, Shield, CheckCircle, Phone, Mail, Upload, Star, Home, Baby, Stethoscope, ChefHat} from 'lucide-react';
 
 export default function JoinUs() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    experience: '',
-    position: '',
-    availability: '',
-    message: ''
-  });
+  // const [formData, setFormData] = useState({
+  //   name: '',
+  //   email: '',
+  //   phone: '',
+  //   experience: '',
+  //   position: '',
+  //   availability: '',
+  //   message: ''
+  // });
 
   // const handleChange = (e) => {
   //   setFormData({
@@ -92,10 +92,10 @@ export default function JoinUs() {
             
             <div className="relative">
               <div className="aspect-w-4 aspect-h-3 rounded-2xl overflow-hidden shadow-2xl">
-                <Image
+                <img
                   src="https://images.pexels.com/photos/7551667/pexels-photo-7551667.jpeg?auto=compress&cs=tinysrgb&w=800"
                   alt="Happy care team working together"
-                  fill
+                  
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -121,7 +121,7 @@ export default function JoinUs() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Why Choose Sri Siddi Vinayaka as Your Employer?
+              Why Choose Sri Siddhi Vinayaka as Your Employer?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               We believe in supporting our team members with competitive benefits, 

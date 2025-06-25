@@ -1,7 +1,33 @@
 // src/app/page.js
 import Image from 'next/image'
 import Link from 'next/link'
+import { Users, Clock, Star } from 'lucide-react';
 
+const services = [
+  { title: 'Child Care', icon: 'child.jpg', desc: 'Safe, loving, and educational care for your little ones.' },
+  { title: 'Elder Care', icon: 'elder.jpg', desc: 'Respectful support for daily activities and companionship.' },
+  { title: 'Bedridden Care', icon: 'bed.jpg', desc: 'Compassionate assistance for immobile patients.' },
+  { title: 'Cooking Support', icon: 'cookings.jpg', desc: 'Nutritious meals prepared with hygiene and care.' },
+  { title: 'Housekeeping', icon: 'cleaning.jpg', desc: 'Maintaining a clean, peaceful home environment.' },          
+]
+const whyUs =[
+    {
+      icon: <Users className="w-10 h-10 text-red-500" />, title: 'Experienced & Verified',
+      description: 'All our staff are background-checked and Experienced'
+    },
+    {
+      icon: <Users className="w-10 h-10 text-blue-500" />, title: 'Family',
+      description: 'We consider ourselves part of your extended family'
+    },
+    {
+      icon: <Star className="w-10 h-10 text-green-500" />, title: '10+ Years Experience',
+      description: 'Trusted by hundreds of families with over a decade of reliable service.'
+    },
+    {
+      icon: <Clock className="w-10 h-10 text-orange-500" />, title: '24/7 Availability',
+      description: 'Available 24/7 with unwavering commitment to quality care'
+    }
+]
 export default function Home() {
   return (
     <main className="flex flex-col gap-16">
@@ -22,26 +48,21 @@ export default function Home() {
         </div>
       </section>
             {/* Why Choose Us */}
-      <section className="py-16 bg-white px-6">
+      <section className="py-16 bg-green-800 px-6">
         <div className="text-center mb-10">
-          <h2 className="text-3xl font-bold text-blue-800">Why Choose Us</h2>
+          <h2 className="text-3xl font-bold text-white">Why Choose Us</h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          <div className="text-center">
-            <Image src="/icons/caregiver.png" alt="Trained Caregivers" width={64} height={64} className="mx-auto mb-4" />
-            <h3 className="text-xl font-semibold">Trained Caregivers</h3>
-            <p className="text-gray-600 mt-2">Our staff is thoroughly trained to handle every situation with love and expertise.</p>
-          </div>
-          <div className="text-center">
-            <Image src="/icons/clock.png" alt="24/7 Availability" width={64} height={64} className="mx-auto mb-4" />
-            <h3 className="text-xl font-semibold">24/7 Availability</h3>
-            <p className="text-gray-600 mt-2">We&apos;re always available — any time, any day — to support your family&apos;s needs.</p>
-          </div>
-          <div className="text-center">
-            <Image src="/icons/plan.png" alt="Customized Plans" width={64} height={64} className="mx-auto mb-4" />
-            <h3 className="text-xl font-semibold">Customized Care Plans</h3>
-            <p className="text-gray-600 mt-2">Every family is unique — so are our flexible, tailored care plans.</p>
-          </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+          {whyUs.map((value, idx) => (
+            <div
+              key={idx}
+              className="bg-green-100 text-center rounded-xl shadow-md hover:shadow-2xl hover:bg-green-50 transform hover:-translate-y-2 transition-all duration-300 ease-linear p-8"
+            >
+              <div className="flex justify-center mb-4">{value.icon}</div>
+              <h3 className="font-semibold text-xl mb-2">{value.title}</h3>
+              <p className="text-sm text-gray-600 mb-2">{value.description}</p>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -53,17 +74,34 @@ export default function Home() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {[
-            { title: 'Child Care', icon: 'child.png', desc: 'Safe, loving, and educational care for your little ones.' },
-            { title: 'Elder Care', icon: 'elder.png', desc: 'Respectful support for daily activities and companionship.' },
-            { title: 'Bedridden Care', icon: 'bed.png', desc: 'Compassionate assistance for immobile patients.' },
-            { title: 'Cooking Support', icon: 'cooking.png', desc: 'Nutritious meals prepared with hygiene and care.' },
-            { title: 'Housekeeping', icon: 'cleaning.png', desc: 'Maintaining a clean, peaceful home environment.' },
-          ].map((service, index) => (
-            <div key={index} className="bg-white p-6 shadow-md rounded-lg text-center">
-              <Image src={`/icons/${service.icon}`} alt={service.title} width={48} height={48} className="mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-blue-700">{service.title}</h3>
-              <p className="text-gray-600 mt-2">{service.desc}</p>
+          {services.map((service, index) => (
+            <div key={index} className="relative group bg-white p-2 shadow-md rounded-xl overflow-hidden">
+              {/* Card Image */}
+              <Image
+                src={`/images/${service.icon}`}
+                alt={service.title}
+                width={500}
+                height={250}
+                className="h-50 object-cover rounded-xl"
+              />
+
+              {/* Gradient Overlay from Bottom to Top */}
+              <div className="absolute inset-0 bg-gradient-to-t from-white via-white/70 to-transparent opacity-0 translate-y-full group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-in-out rounded-xl pointer-events-none"></div>
+
+              {/* Button at Bottom Center */}
+              <div className="absolute bottom-4 left-0 w-full flex justify-center opacity-0 translate-y-10 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-in-out z-10">
+                <Link href='/services'>
+                  <button className="bg-green-600 text-white text-sm font-semibold px-4 py-2 rounded-full  cursor-pointer shadow-md hover:bg-green-700 transition">
+                  Learn More
+                </button>
+                </Link>
+              </div>
+
+              {/* Text Content */}
+              <div className="relative z-1 mt-2">
+                <h3 className="text-lg font-bold text-green-700">{service.title}</h3>
+                <p className="text-gray-600 text-sm">{service.desc}</p>
+              </div>
             </div>
           ))}
         </div>

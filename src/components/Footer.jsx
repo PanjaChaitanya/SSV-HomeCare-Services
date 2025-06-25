@@ -13,7 +13,7 @@ export default function Footer() {
                 <span className="text-white font-bold text-lg">S</span>
               </div>
               <div>
-                <h3 className="text-xl font-bold">Sri Siddi Vinayaka</h3>
+                <h3 className="text-xl font-bold">Sri Siddhi Vinayaka</h3>
                 <p className="text-sm text-gray-300">Home Care Services</p>
               </div>
             </div>
@@ -35,7 +35,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center space-x-3">
                 <Mail size={18} className="text-blue-400" />
-                <span>info@srisiddivinayakahomecare.com</span>
+                <span>info@srisiddhivinayakahomecare.com</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Clock size={18} className="text-blue-400" />

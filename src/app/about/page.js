@@ -4,19 +4,19 @@ import { Metadata } from 'next';
 import { Heart, Users, Clock, CircleCheck } from 'lucide-react';
 
 export const metadata = {
-  title: 'About Us | Sri Siddi Vinayaka Home Care Services',
+  title: 'About Us | Sri Siddhi Vinayaka Home Care Services',
   description:
     'Learn about our compassionate team, values, and mission at Sri Siddi Vinayaka Home Care Services. Trusted in-home care since 2013.',
   keywords: ['Home care services', 'Elder care', 'Childcare', 'About Sri Siddi Vinayaka'],
   openGraph: {
-    title: 'About Us | Sri Siddi Vinayaka Home Care Services',
+    title: 'About Us | Sri Siddhi Vinayaka Home Care Services',
     description:
-      'Learn about our compassionate team, values, and mission at Sri Siddi Vinayaka Home Care Services.',
-    url: 'https://yourdomain.com/about',
+      'Learn about our compassionate team, values, and mission at Sri Siddhi Vinayaka Home Care Services.',
+    url: 'https://srisiddhivinayakahomecareservices.vercel.app/about',
     type: 'website'
   },
   alternates: {
-    canonical: 'https://yourdomain.com/about'
+    canonical: 'https://srisiddhivinayakahomecareservices.vercel.app/about'
   }
 };
 
@@ -46,11 +46,11 @@ export default function AboutPage() {
       <section className="py-10 px-6 text-center flex flex-wrap justify-around items-center animate-slide-in">
         {/* Founder Image */}
         <div>
-          <Image src="/images/founder.png" alt="Founder" width={300} height={300} className='rounded-full' />
+          <Image src="/images/founder.png" alt="Founder" width={300} height={300} className='rounded-full object-cover' />
         </div>
         <div className='flex-col items-center justify-center'>
           <h1 className="text-4xl font-bold mb-4">
-            About <span className="text-sky-600">Sri Siddi Vinayaka</span>
+            About <span className="text-sky-600">Sri Siddhi Vinayaka</span>
           </h1>
           <p className="text-lg max-w-3xl mx-auto mb-6">
             For over a decade, we&apos;ve been delivering heartfelt home care that brings peace, comfort,

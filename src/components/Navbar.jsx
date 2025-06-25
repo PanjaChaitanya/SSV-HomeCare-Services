@@ -77,7 +77,7 @@ const Navbar = () => {
             {/* Logo */}
             <Link href="/" className="flex items-center space-x-3">
               <div className="bg-gradient-cta rounded-full flex items-center justify-center">
-                <Image src="/logo.png" alt='logo' width={250} height={200}/>
+                <Image src="/icon.png" alt='logo' width={70} height={100}/>
               </div>
             </Link>
 
@@ -89,7 +89,7 @@ const Navbar = () => {
                   href={item.href}
                   className={`text-sm font-medium transition-colors hover:text-care-blue-600 ${
                     isActive(item.href)
-                      ? 'text-care-blue-600 border-b-2 border-care-blue-600 pb-1'
+                      ? 'text-sky-400 border-b-2 border-sky-500 pb-1'
                       : 'text-gray-700'
                   }`}
                 >
@@ -105,7 +105,7 @@ const Navbar = () => {
                 className="flex items-center space-x-2 text-blue-400 hover:scale-105 animate-pulse transition-all"
               >
                 <Phone size={18} />
-                <span className="font-bold">+91 </span>
+                <span className="font-bold">+91 93819 52242</span>
               </a>
               <Link href='/join-us'>
                 <button className="bg-orange-200 text-orange-600 animate-pulse font-bold px-3 py-2 rounded-md text-sm hover:scale-105 cursor-pointer transition-all">
@@ -120,7 +120,7 @@ const Navbar = () => {
               onClick={() => setIsMenuOpen((prev) => !prev)}
               aria-label="Toggle Menu"
             >
-              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              {isMenuOpen ? <X size={24} /> : <Menu size={35} />}
             </button>
           </div>
         </div>
