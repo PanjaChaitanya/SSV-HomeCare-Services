@@ -25,9 +25,7 @@ export default function ContactPage() {
         </p>
       </section>
 
-      <section className="bg-white py-10 px-6">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
-
+      <section className="bg-white py-10 flex flex-wrap justify-around">
           {/* Contact Info */}
           <div className="text-gray-800 space-y-6">
             <div>
@@ -50,58 +48,7 @@ export default function ContactPage() {
               <p className="text-lg">care@siddivinayakahomecare.in</p>
             </div>
           </div>
-
-          {/* Contact Form */}
-          <form className="bg-blue-50 p-6 rounded-xl shadow space-y-4">
-            <h2 className="text-xl font-semibold text-blue-900 mb-4">📋 Request a Callback</h2>
-            <input
-              type="text"
-              name="name"
-              placeholder="Your Name"
-              className="w-full p-3 rounded border border-gray-300 focus:outline-blue-500"
-              disabled
-            />
-            <input
-              type="tel"
-              name="phone"
-              placeholder="Your Phone Number"
-              className="w-full p-3 rounded border border-gray-300 focus:outline-blue-500"
-              disabled
-            />
-            <select
-              name="service"
-              className="w-full p-3 rounded border border-gray-300 text-gray-700"
-              disabled
-            >
-              <option value="">Select Service Type</option>
-              <option>Child Care</option>
-              <option>Elder Care</option>
-              <option>Bedridden Care</option>
-              <option>Housekeeping</option>
-              <option>Cooking Support</option>
-            </select>
-            <textarea
-              name="message"
-              rows="4"
-              placeholder="Your Message"
-              className="w-full p-3 rounded border border-gray-300 focus:outline-blue-500"
-              disabled
-            ></textarea>
-
-            <button
-              type="submit"
-              className="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 cursor-not-allowed"
-              disabled
-            >
-              Submit (Disabled – Static Only)
-            </button>
-          </form>
-        </div>
-      </section>
-
-      {/* Google Map */}
-      <section className="mt-16 px-6">
-        <div className="max-w-6xl mx-auto">
+        <div className="">
           <h2 className="text-2xl font-bold text-blue-800 text-center mb-6">Office Location</h2>
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3824.557719669604!2d81.53317847413894!3d16.548411426433805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a37d3004350d2a1%3A0x318786da5b3f8772!2sSRI%20SIDDHI%20VINAYAKA%20HOME%20CARE%20SERVICES!5e0!3m2!1sen!2sin!4v1750308618645!5m2!1sen!2sin"
@@ -115,6 +62,7 @@ export default function ContactPage() {
           ></iframe>
         </div>
       </section>
+
     </>
   )
 }

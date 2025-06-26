@@ -75,11 +75,13 @@ const Navbar = () => {
         <div className="max-w-7xl mx-auto px-4 py-2 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16 lg:h-20">
             {/* Logo */}
-            <Link href="/" className="flex items-center space-x-3">
-              <div className="bg-gradient-cta rounded-full flex items-center justify-center">
-                <Image src="/icon.png" alt='logo' width={70} height={100}/>
+            <Link href="/" className="flex items-center space-x-1">
+              <Image src="/icon.png" alt='logo' width={50} height={70}/>
+              <div className="flex flex-col">
+                <span className="text-2xl font-bold text-orange-400">Sri Siddhi Vinayaka</span>
+                <span className="text-md text-green-600">Home Care Services</span>
               </div>
-            </Link>
+          </Link>
 
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center space-x-8">

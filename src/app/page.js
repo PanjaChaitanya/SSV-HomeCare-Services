@@ -30,7 +30,7 @@ const whyUs =[
 ]
 export default function Home() {
   return (
-    <main className="flex flex-col gap-16">
+    <main className="flex flex-col">
       {/* Hero Section */}
       <section className="px-4 py-20 text-center Hero-Section">
         <div className="max-w-4xl mx-auto">
@@ -48,7 +48,7 @@ export default function Home() {
         </div>
       </section>
             {/* Why Choose Us */}
-      <section className="py-16 bg-green-800 px-6">
+      <section className="py-20 bg-gradient-to-br from-green-700 to-green-500 px-6 transition-all ease-in-out">
         <div className="text-center mb-10">
           <h2 className="text-3xl font-bold text-white">Why Choose Us</h2>
         </div>

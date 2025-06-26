@@ -42,8 +42,7 @@ export default function Services()  {
         'Regular progress updates to parents'
       ],
       availability: '24/7 including weekends and holidays',
-      priceRange: '₹200 - ₹500 per hour',
-      image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=400&fit=crop'
+      image: '/images/child-care.webp'
     },
     {
       title: 'Elder Care Services',
@@ -60,7 +59,6 @@ export default function Services()  {
         'Specialized dementia and Alzheimer\'s care'
       ],
       availability: 'Live-in and hourly care options',
-      priceRange: '₹300 - ₹800 per hour',
       image: 'https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=600&h=400&fit=crop'
     },
     {
@@ -78,7 +76,6 @@ export default function Services()  {
         'Customizable cleaning schedules'
       ],
       availability: 'Daily, weekly, bi-weekly, or monthly',
-      priceRange: '₹1,500 - ₹5,000 per visit',
       image: 'https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=600&h=400&fit=crop'
     },
     {
@@ -96,7 +93,6 @@ export default function Services()  {
         'Cooking lessons and recipe sharing'
       ],
       availability: 'Daily or as-needed basis',
-      priceRange: '₹250 - ₹600 per meal',
       image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&h=400&fit=crop'
     },
     {
@@ -114,7 +110,6 @@ export default function Services()  {
         'Coordination with healthcare providers'
       ],
       availability: '24/7 live-in care recommended',
-      priceRange: '₹500 - ₹1,200 per hour',
       image: '/images/cooking.jpg'
     }
   ];
@@ -141,7 +136,7 @@ export default function Services()  {
             {/* <Link href="/contact" className="bg-care-blue-600 text-white text-lg px-8 py-4 rounded-md font-semibold hover:bg-care-blue-700 transition">
               Get Custom Care Plan
             </Link> */}
-            <a href="tel:+919876543210" className="text-blue-300 border-2 border-blue-400 text-lg px-8 py-4 rounded-md font-semibold hover:bg-blue-500 hover:text-white transition flex items-center justify-center">
+            <a href="tel:+919876543210" className="text-green-300 border-2 border-green-400 text-lg px-8 py-4 rounded-md font-semibold hover:bg-green-500 hover:text-white transition flex items-center justify-center">
               <Phone className="mr-2" size={20} /> Call for Consultation
             </a>
           </div>
@@ -149,13 +144,13 @@ export default function Services()  {
       </section>
 
       {/* Highlights */}
-      <section className="py-16 bg-white">
+      <section className="py-10 bg-white">
         <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
           {serviceHighlights.map((item, index) => {
             const Icon = item.icon;
             return (
-              <div key={index} className='border-2'>
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div key={index} className='text-center rounded-xl shadow-md hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 ease-linear p-8'>
+                <div className="w-16 h-16 bg-gradient-to-br from-green-700 to-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Icon className="text-gray-900" size={24} />
                 </div>
                 <h3 className="text-lg font-bold text-gray-800 mb-2">{item.title}</h3>
@@ -176,7 +171,7 @@ export default function Services()  {
                 <div className={`space-y-6 ${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
                   <div className="flex items-center space-x-4">
                     <div className="w-16 h-16 bg-gradient-to-br from-care-blue-500 to-care-blue-600 rounded-lg flex items-center justify-center">
-                      <Icon className="text-white" size={28} />
+                      <Icon className="text-orange-500" size={28} />
                     </div>
                     <h2 className="text-3xl font-bold text-gray-800">{service.title}</h2>
                   </div>
@@ -185,24 +180,13 @@ export default function Services()  {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     {service.features.map((feature, idx) => (
                       <div key={idx} className="flex items-start space-x-2">
-                        <Check size={16} className="text-care-blue-600 mt-1" />
+                        <Check size={16} className="text-green-600 mt-1" />
                         <span className="text-gray-700 text-sm">{feature}</span>
                       </div>
                     ))}
                   </div>
 
-                  <div className="bg-white p-4 rounded-lg shadow-md grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div>
-                      <p className="font-semibold text-gray-800 mb-1">Availability</p>
-                      <p className="text-sm text-gray-600">{service.availability}</p>
-                    </div>
-                    <div>
-                      <p className="font-semibold text-gray-800 mb-1">Starting From</p>
-                      <p className="text-sm text-care-blue-600 font-bold">{service.priceRange}</p>
-                    </div>
-                  </div>
-
-                  <Link href="/contact" className="inline-block mt-4 bg-care-blue-600 text-blue-400 px-6 py-3 rounded-md font-medium hover:bg-care-blue-700 transition">
+                  <Link href="/contact" className="inline-block mt-4 font-bold bg-green-100 text-green-600 px-6 py-3 rounded-md hover:bg-care-blue-700 transition">
                     Request This Service
                   </Link>
                 </div>
