@@ -1,6 +1,7 @@
 // src/app/page.js
 import Image from 'next/image'
 import Link from 'next/link'
+import Hero from '@/components/Hero';
 import { Users, Clock, Star } from 'lucide-react';
 
 const services = [
@@ -33,19 +34,7 @@ export default function Home() {
     <main className="flex flex-col">
       {/* Hero Section */}
       <section className="px-4 py-20 text-center Hero-Section">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold text-blue-900">
-            Compassionate Home Care Services You Can Trust
-          </h1>
-          <p className="mt-4 text-lg text-gray-700">
-            Serving your loved ones with warmth, dignity, and care
-          </p>
-          <Link href="/contact">
-            <button className="mt-6 bg-blue-700 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-800 transition">
-              Book a Free Consultation
-            </button>
-          </Link>
-        </div>
+       <Hero/>
       </section>
             {/* Why Choose Us */}
       <section className="py-20 bg-gradient-to-br from-green-700 to-green-500 px-6 transition-all ease-in-out">
@@ -115,7 +104,7 @@ export default function Home() {
         </div>
       </section>
 
-            {/* Testimonials */}
+            {/* Testimonials
       <section className="py-16 px-6 bg-white">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-blue-800">What Our Clients Say</h2>
@@ -130,7 +119,7 @@ export default function Home() {
             <span className="block mt-2 font-semibold">— Rajeev Kumar</span>
           </blockquote>
         </div>
-      </section>
+      </section> */}
 
             {/* About Us Preview */}
       <section className="bg-blue-50 py-16 px-6">
