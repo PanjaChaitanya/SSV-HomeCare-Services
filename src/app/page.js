@@ -8,8 +8,8 @@ const services = [
   { title: 'Child Care', icon: 'child.jpg', desc: 'Safe, loving, and educational care for your little ones.' },
   { title: 'Elder Care', icon: 'elder.jpg', desc: 'Respectful support for daily activities and companionship.' },
   { title: 'Bedridden Care', icon: 'bed.jpg', desc: 'Compassionate assistance for immobile patients.' },
+  { title: 'Housekeeping', icon: 'cleaning.jpg', desc: 'Maintaining a clean, peaceful home environment.' },
   { title: 'Cooking Support', icon: 'cookings.jpg', desc: 'Nutritious meals prepared with hygiene and care.' },
-  { title: 'Housekeeping', icon: 'cleaning.jpg', desc: 'Maintaining a clean, peaceful home environment.' },          
 ]
 const whyUs =[
     {
@@ -32,11 +32,13 @@ const whyUs =[
 export default function Home() {
   return (
     <main className="flex flex-col">
+
       {/* Hero Section */}
       <section className="px-4 py-20 text-center Hero-Section">
        <Hero/>
       </section>
-            {/* Why Choose Us */}
+
+      {/* Why Choose Us */}
       <section className="py-20 bg-gradient-to-br from-green-700 to-green-500 px-6 transition-all ease-in-out">
         <div className="text-center mb-10">
           <h2 className="text-3xl font-bold text-white">Why Choose Us</h2>
@@ -55,7 +57,7 @@ export default function Home() {
         </div>
       </section>
 
-            {/* Services Overview */}
+      {/* Services Overview */}
       <section className="bg-gray-50 py-16 px-6">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-blue-800">Our Services</h2>
@@ -66,24 +68,22 @@ export default function Home() {
           {services.map((service, index) => (
             <div key={index} className="relative group bg-white p-2 shadow-md rounded-xl overflow-hidden">
               {/* Card Image */}
-              <Image
-                src={`/images/${service.icon}`}
-                alt={service.title}
-                width={500}
-                height={250}
-                className="h-50 object-cover rounded-xl"
-              />
-
-              {/* Gradient Overlay from Bottom to Top */}
-              <div className="absolute inset-0 bg-gradient-to-t from-white via-white/70 to-transparent opacity-0 translate-y-full group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-in-out rounded-xl pointer-events-none"></div>
-
-              {/* Button at Bottom Center */}
-              <div className="absolute bottom-4 left-0 w-full flex justify-center opacity-0 translate-y-10 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-in-out z-10">
-                <Link href='/services'>
-                  <button className="bg-green-600 text-white text-sm font-semibold px-4 py-2 rounded-full  cursor-pointer shadow-md hover:bg-green-700 transition">
-                  Learn More
-                </button>
-                </Link>
+              <div className='relative'>
+                <Image
+                  src={`/images/${service.icon}`}
+                  alt={service.title}
+                  width={500}
+                  height={250}
+                  className="h-50 object-cover rounded-xl"
+                />
+                  {/* Button at Bottom Center */}
+                <div className="absolute bottom-3 right-3">
+                  <Link href={`/services#service${index}`}>
+                  <button className="bg-green-600 align-middle text-center text-white text-sm font-semibold px-4 py-2 rounded-full  cursor-pointer shadow-md hover:bg-green-700 transition">
+                    ➤
+                  </button>
+                  </Link>
+                </div>
               </div>
 
               {/* Text Content */}
@@ -104,7 +104,7 @@ export default function Home() {
         </div>
       </section>
 
-            {/* Testimonials
+      {/* Testimonials
       <section className="py-16 px-6 bg-white">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-blue-800">What Our Clients Say</h2>
@@ -121,7 +121,7 @@ export default function Home() {
         </div>
       </section> */}
 
-            {/* About Us Preview */}
+      {/* About Us Preview */}
       <section className="bg-blue-50 py-16 px-6">
         <div className="max-w-5xl mx-auto text-center">
           <h2 className="text-3xl font-bold text-blue-900">About Us</h2>
@@ -138,7 +138,7 @@ export default function Home() {
         </div>
       </section>
 
-            {/* Contact CTA */}
+      {/* Contact CTA */}
       <section className="bg-blue-700 text-white py-12 px-6 text-center">
         <h2 className="text-2xl font-semibold">Need Help? Call us now at <a href="tel:+919000000000" className="underline">+91 90000 00000</a></h2>
         <p className="mt-2">We&apos;re just one call away from caring for your family.</p>

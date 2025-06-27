@@ -62,6 +62,23 @@ export default function Services()  {
       image: 'https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=600&h=400&fit=crop'
     },
     {
+      title: 'Bedridden Patient Care',
+      icon: User,
+      description: 'Specialized medical and personal care for patients who are bedridden or have limited mobility, ensuring comfort and dignity.',
+      features: [
+        'Personal hygiene and bathing assistance',
+        'Turning and repositioning to prevent bedsores',
+        'Medication administration and monitoring',
+        'Wound care and dressing changes',
+        'Physical therapy and mobility exercises',
+        'Nutritional support and feeding assistance',
+        '24/7 monitoring and emergency response',
+        'Coordination with healthcare providers'
+      ],
+      availability: '24/7 live-in care recommended',
+      image: '/images/cooking.jpg'
+    },
+    {
       title: 'Housekeeping Services',
       icon: Home,
       description: 'Comprehensive home cleaning and maintenance services to keep your home spotless, organized, and comfortable for your family.',
@@ -94,23 +111,6 @@ export default function Services()  {
       ],
       availability: 'Daily or as-needed basis',
       image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&h=400&fit=crop'
-    },
-    {
-      title: 'Bedridden Patient Care',
-      icon: User,
-      description: 'Specialized medical and personal care for patients who are bedridden or have limited mobility, ensuring comfort and dignity.',
-      features: [
-        'Personal hygiene and bathing assistance',
-        'Turning and repositioning to prevent bedsores',
-        'Medication administration and monitoring',
-        'Wound care and dressing changes',
-        'Physical therapy and mobility exercises',
-        'Nutritional support and feeding assistance',
-        '24/7 monitoring and emergency response',
-        'Coordination with healthcare providers'
-      ],
-      availability: '24/7 live-in care recommended',
-      image: '/images/cooking.jpg'
     }
   ];
 
@@ -167,7 +167,7 @@ export default function Services()  {
           {services.map((service, index) => {
             const Icon = service.icon;
             return (
-              <div key={index} className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}>
+              <div key={index} id={`service${index}`} className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}>
                 <div className={`space-y-6 ${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
                   <div className="flex items-center space-x-4">
                     <div className="w-16 h-16 bg-gradient-to-br from-care-blue-500 to-care-blue-600 rounded-lg flex items-center justify-center">
