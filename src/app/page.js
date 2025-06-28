@@ -39,28 +39,28 @@ export default function Home() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-20 bg-gradient-to-br from-green-700 to-green-500 px-6 transition-all ease-in-out">
+      <section className="py-15 bg-gradient-to-b from-green-50 to-gray-200 px-6 transition-all ease-in-out">
         <div className="text-center mb-10">
-          <h2 className="text-3xl font-bold text-white">Why Choose Us</h2>
+          <h2 className="text-3xl font-bold">Why Choose Us</h2>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
           {whyUs.map((value, idx) => (
             <div
               key={idx}
-              className="bg-green-100 text-center rounded-xl shadow-md hover:shadow-2xl hover:bg-green-50 transform hover:-translate-y-2 transition-all duration-300 ease-linear p-8"
+              className="bg-green-50 text-center rounded-xl shadow-md hover:shadow-2xl hover:bg-green-50 transform hover:-translate-y-2 transition-all duration-300 ease-linear p-8"
             >
               <div className="flex justify-center mb-4">{value.icon}</div>
               <h3 className="font-semibold text-xl mb-2">{value.title}</h3>
-              <p className="text-sm text-gray-600 mb-2">{value.description}</p>
+              <p className="text-sm text-gray-800 mb-2">{value.description}</p>
             </div>
           ))}
         </div>
       </section>
 
       {/* Services Overview */}
-      <section className="bg-gray-50 py-16 px-6">
+      <section className="bg-gray-100 py-15 px-6">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-blue-800">Our Services</h2>
+          <h2 className="text-3xl font-bold">Our Services</h2>
           <p className="text-gray-600 mt-2">We provide reliable and compassionate care solutions at your doorstep.</p>
         </div>
 
@@ -88,8 +88,8 @@ export default function Home() {
 
               {/* Text Content */}
               <div className="relative z-1 mt-2">
-                <h3 className="text-lg font-bold text-green-700">{service.title}</h3>
-                <p className="text-gray-600 text-sm">{service.desc}</p>
+                <h3 className="text-lg font-bold text-orange-600">{service.title}</h3>
+                <p className="text-gray-800 text-sm">{service.desc}</p>
               </div>
             </div>
           ))}
@@ -97,7 +97,7 @@ export default function Home() {
 
         <div className="text-center mt-10">
           <Link href="/services">
-            <button className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">
+            <button className="bg-orange-600 text-white px-6 py-3 rounded-lg hover:bg-orange-400 transition">
               Explore Services
             </button>
           </Link>

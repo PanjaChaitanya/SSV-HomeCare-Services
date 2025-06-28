@@ -59,7 +59,7 @@ export default function Services()  {
         'Specialized dementia and Alzheimer\'s care'
       ],
       availability: 'Live-in and hourly care options',
-      image: 'https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=600&h=400&fit=crop'
+      image: '/images/services/elder-care.jpg'
     },
     {
       title: 'Bedridden Patient Care',
@@ -76,7 +76,7 @@ export default function Services()  {
         'Coordination with healthcare providers'
       ],
       availability: '24/7 live-in care recommended',
-      image: '/images/cooking.jpg'
+      image: '/images/services/bed-ridden.jpg'
     },
     {
       title: 'Housekeeping Services',
@@ -126,7 +126,7 @@ export default function Services()  {
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-care-blue-50 via-white to-care-cream-50 py-16 lg:py-20">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
+          <h1 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-6">
             Comprehensive Home Care Services
           </h1>
           <p className="text-xl text-gray-600 leading-relaxed mb-8">

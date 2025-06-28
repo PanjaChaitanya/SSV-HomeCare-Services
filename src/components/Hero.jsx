@@ -4,7 +4,7 @@ export default function Hero() {
   return (
     <>
        <div className="max-w-4xl max-h-screen">
-          <h1 className="text-3xl md:text-4xl text-blue-900">
+          <h1 className="text-3xl md:text-4xl text-black">
             Compassionate Home Care Services You Can Trust
           </h1>
           <p className="mt-4 text-lg text-gray-700">

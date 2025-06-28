@@ -68,7 +68,7 @@ const Navbar = () => {
     <>
       {/* Top Navbar */}
       <header
-        className={`fixed top-0 z-50 w-full bg-transparent backdrop-blur-md border-b border-gray-200 shadow-sm transition-transform duration-300 ${
+        className={`fixed top-0 z-50 w-full bg-white border-b border-gray-200 shadow-sm transition-transform duration-300 ${
           showNavbar ? 'translate-y-0' : '-translate-y-full'
         }`}
       >
@@ -77,9 +77,9 @@ const Navbar = () => {
             {/* Logo */}
             <Link href="/" className="flex items-center space-x-1">
               <Image src="/icon.png" alt='logo' width={50} height={70}/>
-              <div className="flex flex-col  bg-gradient-to-br from-yellow-300 via-orange-500 to-green-400 bg-clip-text text-transparent">
-                <span className="text-2xl font-bold ">Sri Siddhi Vinayaka</span>
-                <span className="text-md ">Home Care Services</span>
+              <div className="flex flex-col">
+                <span className="text-2xl font-extrabold logo-font text-[#f25939] ">Sri Siddhi Vinayaka</span>
+                <span className="text-md uppercase logo-font">Home Care Services</span>
               </div>
           </Link>
 
@@ -89,10 +89,10 @@ const Navbar = () => {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className={`text-md font-semibold px-1 transition-colors hover:text-orange-400 ${
+                  className={`text-md font-semibold px-1 transition-colors hover:text-orange-600 ${
                     isActive(item.href)
-                      ? 'text-green-600 border-b-2 border-orange-400 '
-                      : 'text-gray-700'
+                      ? 'text-orange-500 border-b-2 border-orange-500 '
+                      : 'text-black'
                   }`}
                 >
                   {item.name}
