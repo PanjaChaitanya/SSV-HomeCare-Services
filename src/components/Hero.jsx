@@ -1,28 +1,50 @@
-import Link from 'next/link'
+import Link from "next/link";
+import Image from "next/image";
 
 export default function Hero() {
   return (
-    <>
-       <div className="max-w-4xl max-h-screen">
-          <h1 className="text-3xl md:text-4xl text-black">
-            Compassionate Home Care Services You Can Trust
-          </h1>
-          <p className="mt-4 text-lg text-gray-700">
-            Serving your loved ones with warmth, dignity, and care
-          </p>
-          <div className="relative mt-5 inline-block p-[2px] rounded-full overflow-hidden group">
-            {/* Animated Gradient Border */}
-            <div className="absolute inset-0 bg-[linear-gradient(90deg,#ff0000,#00ff00,#0000ff,#ff0000)] bg-[length:300%_300%] animate-border-spin" />
+    <section className="relative overflow-hidden bg-white">
+      {/* Orange curved background */}
+      <div className="absolute top-0 right-0 w-[60%] h-full bg-gradient-to-br from-orange-500 to-orange-600 rounded-l-[50%] -z-10"></div>
 
-            {/* Actual Button */}
-            <Link
-              href="/contact"
-              className="relative z-10 block bg-white tracking-wide text-green-700 font-semibold px-6 py-3 rounded-full group-hover:bg-green-700 group-hover:text-white transition-all duration-300"
-            >
-              Book a Free Consultation
-            </Link>
-          </div>
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between px-8 py-20">
+        {/* Left Section */}
+        <div className="md:w-1/2 space-y-6">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
+            Welcome to{" "}
+            <span className="text-orange-600">Sri Siddi Vinayaka Home Care</span>
+          </h1>
+          <p className="text-gray-600 text-lg max-w-md">
+          Serving your loved ones with warmth, dignity, and care
+          </p>
+          <Link
+            href="/contact"
+            className="inline-block bg-orange-600 hover:bg-orange-700 text-white px-6 py-3 rounded-full text-lg font-semibold transition-all duration-300 shadow-md"
+          >
+            Get Consultation Now
+          </Link>
         </div>
-    </>
-  )
+
+        {/* Right Section */}
+        <div className="relative md:w-1/2 flex justify-center mt-10 md:mt-0">
+          <div className="absolute -top-10 left-0">
+            <Image src="/images/love.png" alt="banner-child" width={120} height={100} className=""/>
+          </div>
+          <div className="absolute top-40 left-40">
+            <Image src="/images/banner-elder.jpg" alt="Chart 2" width={260} height={180} className="rounded-xl shadow-lg" />
+          </div>
+          <div className="absolute top-20 left-5">
+            <Image src="/images/child.jpg" alt="Chart 2" width={160} height={120} className="rounded-xl"/>
+          </div>
+          <Image
+            src="/images/hero-banner.jpg"
+            alt="Hero Banner"
+            width={500}
+            height={400}
+            className="rounded-2xl shadow-lg"
+          />
+        </div>
+      </div>
+    </section>
+  );
 }

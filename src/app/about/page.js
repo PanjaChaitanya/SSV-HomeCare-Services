@@ -50,7 +50,7 @@ export default function AboutPage() {
         </div>
         <div className='flex-col items-center justify-center'>
           <h1 className="text-4xl font-bold mb-4">
-            About <span className="text-sky-600">Sri Siddhi Vinayaka</span>
+            About <span className="text-orange-600">Sri Siddhi Vinayaka</span>
           </h1>
           <p className="text-lg max-w-3xl mx-auto mb-6">
             For over a decade, we&apos;ve been delivering heartfelt home care that brings peace, comfort,

@@ -34,7 +34,7 @@ export default function Home() {
     <main className="flex flex-col">
 
       {/* Hero Section */}
-      <section className="px-4 py-20 text-center Hero-Section">
+      <section className="px-4 text-center Hero-Section">
        <Hero/>
       </section>
 

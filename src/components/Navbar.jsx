@@ -102,13 +102,7 @@ const Navbar = () => {
 
             {/* Desktop CTA */}
             <div className="hidden lg:flex items-center space-x-4">
-              <a
-                href="tel:+919876543210"
-                className="flex items-center space-x-2 text-blue-400 hover:scale-105 animate-pulse transition-all"
-              >
-                <Phone size={18} />
-                <span className="font-bold">+91 93819 52242</span>
-              </a>
+              
               <Link href='/join-us'>
                 <button className="bg-orange-200 text-orange-600 animate-pulse font-bold px-3 py-2 rounded-md text-sm hover:scale-105 cursor-pointer transition-all">
                   Join Us

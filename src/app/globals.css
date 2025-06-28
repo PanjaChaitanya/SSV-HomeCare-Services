@@ -18,17 +18,11 @@ h1,h2{
   font-style: normal;
 }
 @keyframes border-spin {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
-
 .animate-border-spin {
   animation: border-spin 3s linear infinite;
 }
+
