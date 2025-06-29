@@ -1,18 +1,31 @@
 import Link from "next/link";
 import Image from "next/image";
-
+import BlurText from "./BlurText";
 export default function Hero() {
   return (
     <section className="relative overflow-hidden bg-white">
       {/* Orange curved background */}
       <div className="absolute top-0 right-0 w-[60%] h-full bg-gradient-to-br from-orange-500 to-orange-600 rounded-l-[50%] -z-10"></div>
 
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between px-8 py-20">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between px-5 py-20">
         {/* Left Section */}
-        <div className="md:w-1/2 space-y-6">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
-            Welcome to{" "}
-            <span className="text-orange-600">Sri Siddi Vinayaka Home Care</span>
+        <div className="md:w-1/2 space-y-6 text-left">
+          <h1 className="text-4xl md:text-5xl font-bold flex-col gap-2">
+            <span className="text-gray-900 mb-2">Welcome to</span>
+            <span className="text-orange-600">
+              <BlurText
+							text="Sri Siddhi Vinayaka"
+							delay={50}
+							animateBy="lettters"
+							direction="bottom"
+							/>
+              <BlurText
+							text="Home Care"
+							delay={50}
+							animateBy="lettters"
+							direction="bottom"
+							/>
+            </span>
           </h1>
           <p className="text-gray-600 text-lg max-w-md">
           Serving your loved ones with warmth, dignity, and care
