@@ -17,6 +17,23 @@ h1,h2{
   font-weight: 400;
   font-style: normal;
 }
+/* page scroll animation */
+.animateClass{
+    animation: appear linear;
+    animation-timeline: view();
+    animation-range: entry 0%;
+}
+
+@keyframes appear{
+    0% {
+        opacity: 0;
+        scale: 0.5;
+    }
+    100% {
+        opacity: 1;
+        scale: 1;
+    }
+}
 @keyframes border-spin {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
