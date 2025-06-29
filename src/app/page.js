@@ -38,6 +38,23 @@ export default function Home() {
        <Hero/>
       </section>
 
+      {/* About Us Preview */}
+      <section className="bg-orange-50 py-16 px-6">
+        <div className="max-w-5xl mx-auto text-center">
+          <h2 className="text-3xl font-bold text-orange-500">About Us</h2>
+          <p className="text-gray-700 mt-4">
+            Sri Siddi Vinayaka Home Care Services was founded with the mission to bring compassionate,
+            professional care into the homes of families across Andhra Pradesh. Whether it&apos;s a child,
+            an elder, or a recovering loved one — we treat every person like our own.
+          </p>
+          <Link href="/about">
+            <button className="mt-6 bg-lime-700 text-white px-6 py-3 rounded-lg hover:bg-blue-800 transition">
+              Learn More About Us
+            </button>
+          </Link>
+        </div>
+      </section>
+
       {/* Why Choose Us */}
       <section className="py-15 bg-gradient-to-b from-green-50 to-gray-200 px-6 transition-all ease-in-out">
         <div className="text-center mb-10">
@@ -121,22 +138,6 @@ export default function Home() {
         </div>
       </section> */}
 
-      {/* About Us Preview */}
-      <section className="bg-blue-50 py-16 px-6">
-        <div className="max-w-5xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-blue-900">About Us</h2>
-          <p className="text-gray-700 mt-4">
-            Sri Siddi Vinayaka Home Care Services was founded with the mission to bring compassionate,
-            professional care into the homes of families across Andhra Pradesh. Whether it&apos;s a child,
-            an elder, or a recovering loved one — we treat every person like our own.
-          </p>
-          <Link href="/about">
-            <button className="mt-6 bg-blue-700 text-white px-6 py-3 rounded-lg hover:bg-blue-800 transition">
-              Learn More About Us
-            </button>
-          </Link>
-        </div>
-      </section>
 
       {/* Contact CTA */}
       <section className="bg-blue-700 text-white py-12 px-6 text-center">

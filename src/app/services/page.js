@@ -136,7 +136,7 @@ export default function Services()  {
             {/* <Link href="/contact" className="bg-care-blue-600 text-white text-lg px-8 py-4 rounded-md font-semibold hover:bg-care-blue-700 transition">
               Get Custom Care Plan
             </Link> */}
-            <a href="tel:+919876543210" className="text-green-300 border-2 border-green-400 text-lg px-8 py-4 rounded-md font-semibold hover:bg-green-500 hover:text-white transition flex items-center justify-center">
+            <a href="tel:+919876543210" className="border-1 border-orange-400 text-lg px-6 py-2 rounded-md font-semibold hover:bg-green-500 hover:text-white transition flex items-center justify-center">
               <Phone className="mr-2" size={20} /> Call for Consultation
             </a>
           </div>
@@ -150,8 +150,8 @@ export default function Services()  {
             const Icon = item.icon;
             return (
               <div key={index} className='text-center rounded-xl shadow-md hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 ease-linear p-8'>
-                <div className="w-16 h-16 bg-gradient-to-br from-green-700 to-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Icon className="text-gray-900" size={24} />
+                <div className="w-16 h-16 border-2 border-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Icon className="text-orange-600" size={24} />
                 </div>
                 <h3 className="text-lg font-bold text-gray-800 mb-2">{item.title}</h3>
                 <p className="text-gray-600 text-sm">{item.description}</p>

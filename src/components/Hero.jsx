@@ -17,11 +17,20 @@ export default function Hero() {
           <p className="text-gray-600 text-lg max-w-md">
           Serving your loved ones with warmth, dignity, and care
           </p>
-          <Link
-            href="/contact"
-            className="inline-block bg-orange-600 hover:bg-orange-700 text-white px-6 py-3 rounded-full text-lg font-semibold transition-all duration-300 shadow-md"
-          >
-            Get Consultation Now
+          <Link href="/contact" className="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-md border border-orange-200 font-medium shadow-lg shadow-gray-400">
+            <div className="relative inline-flex h-12 sm:h-14 md:h-16 overflow-hidden rounded-lg group cursor-pointer shadow-lg">
+              {/* Default: orange bg, white text */}
+              <div className="inline-flex h-12 sm:h-14 md:h-16 w-full items-center justify-center px-6 bg-orange-600 text-white transition-all duration-500 ease-in-out group-hover:-translate-y-[150%]">
+                Get Consultation
+              </div>
+
+              {/* Hover: white bg, orange text */}
+              <div className="absolute inline-flex h-12 sm:h-14 md:h-16 w-full items-center justify-center text-orange-600 transition-all duration-500 ease-in-out group-hover:translate-y-0 -translate-y-[150%]">
+                <span className="absolute h-full w-full translate-y-full skew-y-12 scale-y-0 bg-white transition-all duration-500 ease-in-out group-hover:translate-y-0 group-hover:scale-200"></span>
+                <span className="z-10 font-semibold">Get Consultation</span>
+              </div>
+            </div>
+
           </Link>
         </div>
 
