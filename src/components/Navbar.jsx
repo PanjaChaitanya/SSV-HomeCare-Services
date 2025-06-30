@@ -93,7 +93,7 @@ const Navbar = () => {
                   <Link
                     key={item.name}
                     href={item.href}
-                    className={`transition-colors hover:text-orange-600 uppercase ${
+                    className={`transition-colors hover:text-orange-600 font-semibold text-sm uppercase ${
                       isActive(item.href)
                         ? 'text-orange-500 border-b-2 border-orange-500 '
                         : 'text-gray-700'
@@ -167,7 +167,7 @@ const Navbar = () => {
           showBottomBar ? 'translate-y-0' : 'translate-y-full'
         }`}
       >
-        <a href="tel:+919876543210" className="text-green-600">
+        <a href="tel:+919381952242" className="text-green-600">
           <Phone size={30} />
         </a>
         <Link href="/join-us">

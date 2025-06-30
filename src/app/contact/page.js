@@ -7,12 +7,12 @@ export const metadata = {
   title: "Contact Us | Sri Siddi Vinayaka Home Care",
   description: "Reach out to Sri Siddi Vinayaka Home Care Services. Call, WhatsApp, or use our contact form to request a callback.",
   alternates: {
-    canonical: "https://yourdomain.com/contact",
+    canonical: "https://ssvhomecareservices.vercel.app/contact",
   },
   openGraph: {
     title: "Contact Us | Sri Siddi Vinayaka Home Care",
     description: "Call, WhatsApp, or fill the form to get in touch with our team.",
-    url: "https://yourdomain.com/contact",
+    url: "https://ssvhomecareservices.vercel.app/contact",
   },
 };
 
@@ -21,9 +21,16 @@ export default function ContactPage() {
     <>
       <section className="bg-blue-50 py-16 px-6 text-center">
         <h1 className="text-4xl font-bold text-orange-600">Get in Touch With Us</h1>
-        <p className="mt-4 text-gray-700 max-w-xl mx-auto">
+        <p className="my-4 text-gray-700 max-w-xl mx-auto">
           We&apos;re here to help you 24/7. Feel free to reach out by phone, WhatsApp, or submit the contact form below.
         </p>
+        <a
+          href="/images/visiting-card.jpg"
+          download="Sri_Siddhi_Vinayaka_Home_Care_Visiting_Card.jpg"
+          className="bg-[#f25939] hover:bg-[#d14d31] text-white font-semibold px-5 py-2 rounded-lg transition-all duration-200"
+        >
+          Download Visiting Card
+        </a>
       </section>
 
       <section className="bg-white py-10 flex flex-wrap justify-around">
@@ -31,12 +38,12 @@ export default function ContactPage() {
           <div className="text-gray-800 space-y-6">
             <div>
               <h2 className="text-2xl font-semibold text-blue-800 mb-2"><Phone size={25} className='inline'/> Phone</h2>
-              <a href='tel:+919876543210' className="text-lg">+91 98765 43210</a>
+              <a href='tel:+919876543210' className="text-lg">+91 93819 52242</a>
             </div>
             <div>
               <h2 className="text-2xl font-semibold text-green-700 mb-2">💬 WhatsApp</h2>
               <a
-                href="https://wa.me/919876543210"
+                href="https://wa.me/919381952242"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-blue-600 underline"

@@ -45,7 +45,7 @@ export default function JoinUs() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
               <div className="space-y-4">
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
                   Become a{' '}
                   <span className="text-blue-600">Care</span>{' '}
                   Giver
@@ -65,11 +65,11 @@ export default function JoinUs() {
                   Apply Now
                 </a> */}
                 <a
-                  href="tel:+91-9876543210"
+                  href="tel:+91-9381952242"
                   className="inline-flex items-center justify-center px-6 py-3 border-2 border-blue-600 text-base font-medium rounded-md text-blue-600 bg-white hover:bg-blue-50 transition-all duration-200"
                 >
                   <Phone className="h-5 w-5 mr-2" />
-                  Call : +91-9876543210
+                  Call : +91-9381952242
                 </a>
               </div>
               
@@ -593,11 +593,11 @@ export default function JoinUs() {
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <a
-              href="tel:+91-9876543210"
+              href="tel:+91-9381952242"
               className="inline-flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-blue-600 bg-white hover:bg-gray-50 transition-colors"
             >
               <Phone className="h-5 w-5 mr-2" />
-              Call : +91-9876543210
+              Call : +91-9381952242
             </a>
             <a
               href="mailto:careers@srisiddivinayaka.com"
