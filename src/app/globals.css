@@ -1,34 +1,21 @@
-/* Font for logo design */
-@import url('https://fonts.googleapis.com/css2?family=Quintessential&display=swap');
-/* Fonr for headings */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
-/* Font For body & Buttons */
-@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
-
 @import "tailwindcss";
 
 html {
   scroll-behavior: smooth;
 }
-
-.logo-font{
-  font-family: "Quintessential", serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-h1,h2,.montserrat{
-  font-family: "Montserrat", sans-serif;
-  font-optical-sizing: auto;
+/* Global fallback for headings */
+h1, h2, .montserrat {
+  font-family: var(--font-montserrat), sans-serif;
   font-weight: 600;
-  font-style: normal;
 }
-body{
-  font-family: "Nunito", sans-serif;
-  font-optical-sizing: auto;
+
+/* For logo text */
+.logo-font {
+  font-family: var(--font-quintessential), serif;
   font-weight: 400;
   font-style: normal;
 }
+
 
 /* page scroll animation */
 .animateClass{

@@ -1,6 +1,5 @@
 'use client';
 
-import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Users, Heart, Award, Clock, Shield, CheckCircle, Phone, Mail, Upload, Star, Home, Baby, Stethoscope, ChefHat} from 'lucide-react';
@@ -92,9 +91,9 @@ export default function JoinUs() {
             
             <div className="relative">
               <div className="aspect-w-4 aspect-h-3 rounded-2xl overflow-hidden shadow-2xl">
-                <img
-                  src="https://images.pexels.com/photos/7551667/pexels-photo-7551667.jpeg?auto=compress&cs=tinysrgb&w=800"
-                  alt="Happy care team working together"
+                <Image
+                  src="/images/join-us-homecare.jpg"
+                  alt="Care Giver working"
                   
                   className="w-full h-full object-cover"
                 />

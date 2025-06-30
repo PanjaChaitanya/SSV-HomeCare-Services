@@ -1,3 +1,4 @@
+'use client';
 import Link from 'next/link'
 import { Phone, Clock,Users,Mail,Instagram, MessageCircle, Facebook } from 'lucide-react'
 export default function Footer() {
