@@ -76,48 +76,51 @@ const Navbar = () => {
           <div className="flex justify-between items-center h-16 lg:h-20">
             {/* Logo */}
             <Link href="/" className="flex items-center space-x-1">
-              <Image src="/icon.png" alt='logo' width={50} height={70}/>
+              <Image src="/icon.png" alt="logo" width={50} height={70} />
               <div className="flex flex-col">
-                <span className="text-2xl font-extrabold logo-font text-[#f25939] ">Sri Siddhi Vinayaka</span>
-                <span className="text-md uppercase logo-font">Home Care Services</span>
+                <span className="text-2xl font-extrabold logo-font text-[#f25939] ">
+                  Sri Siddhi Vinayaka
+                </span>
+                <span className="text-md uppercase logo-font">
+                  Home Care Services
+                </span>
               </div>
-          </Link>
+            </Link>
+            <div className='flex gap-5'>
+              {/* Desktop Navigation */}
+              <nav className="hidden lg:flex items-center space-x-8">
+                {navigation.map((item) => (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    className={`transition-colors hover:text-orange-600 uppercase ${
+                      isActive(item.href)
+                        ? 'text-orange-500 border-b-2 border-orange-500 '
+                        : 'text-gray-700'
+                    }`}
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+              </nav>
 
-            {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center space-x-8">
-              {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className={`text-md font-semibold px-1 transition-colors hover:text-orange-600 ${
-                    isActive(item.href)
-                      ? 'text-orange-500 border-b-2 border-orange-500 '
-                      : 'text-black'
-                  }`}
-                >
-                  {item.name}
+              {/* Desktop CTA */}
+              <div className="hidden lg:flex items-center space-x-4">
+                <Link href="/join-us">
+                  <button className="bg-orange-200 text-orange-600 animate-pulse font-bold px-3 py-2 rounded-md text-sm hover:scale-105 cursor-pointer transition-all">
+                    Join Us
+                  </button>
                 </Link>
-              ))}
-            </nav>
-
-            {/* Desktop CTA */}
-            <div className="hidden lg:flex items-center space-x-4">
-              
-              <Link href='/join-us'>
-                <button className="bg-orange-200 text-orange-600 animate-pulse font-bold px-3 py-2 rounded-md text-sm hover:scale-105 cursor-pointer transition-all">
-                  Join Us
-                </button>
-              </Link>
+              </div>
             </div>
-
-            {/* Mobile Menu Button */}
-            <button
-              className="lg:hidden p-2 rounded-md text-gray-700 hover:text-gray-900 hover:bg-gray-100"
-              onClick={() => setIsMenuOpen((prev) => !prev)}
-              aria-label="Toggle Menu"
-            >
-              {isMenuOpen ? <X size={24} /> : <Menu size={35} />}
-            </button>
+              {/* Mobile Menu Button */}
+              <button
+                className="lg:hidden p-2 rounded-md text-gray-700 hover:text-gray-900 hover:bg-gray-100"
+                onClick={() => setIsMenuOpen((prev) => !prev)}
+                aria-label="Toggle Menu"
+              >
+                {isMenuOpen ? <X size={24} /> : <Menu size={35} />}
+              </button>
           </div>
         </div>
       </header>
@@ -143,9 +146,9 @@ const Navbar = () => {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className={`text-base font-medium border-b-1 transition-colors hover:text-blue-400 ${
+                  className={`text-base font-medium border-b-1 transition-colors hover:text-orange-500 ${
                     isActive(item.href)
-                      ? 'text-blue-500 bg-care-blue-50 rounded-md px-2 py-1'
+                      ? 'text-orange-600 bg-care-blue-50 rounded-md px-2 py-1'
                       : 'text-gray-700'
                   }`}
                   onClick={() => setIsMenuOpen(false)}
@@ -164,14 +167,11 @@ const Navbar = () => {
           showBottomBar ? 'translate-y-0' : 'translate-y-full'
         }`}
       >
-        <a
-          href="tel:+919876543210"
-          className="text-blue-400"
-        >
+        <a href="tel:+919876543210" className="text-green-600">
           <Phone size={30} />
         </a>
-        <Link href='/join-us'>
-          <button className="bg-gradient-to-tl text-blue-400 border-1 px-4 py-2 rounded-xl">
+        <Link href="/join-us">
+          <button className="bg-gradient-to-tl text-orange-600 border-1 px-4 py-2 rounded-xl">
             Join Us
           </button>
         </Link>

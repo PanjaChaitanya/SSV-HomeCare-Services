@@ -1,6 +1,7 @@
 // src/app/contact/page.js
 import { NextSeo } from 'next-seo'
 import Link from 'next/link'
+import { Phone } from 'lucide-react';
 
 export const metadata = {
   title: "Contact Us | Sri Siddi Vinayaka Home Care",
@@ -19,7 +20,7 @@ export default function ContactPage() {
   return (
     <>
       <section className="bg-blue-50 py-16 px-6 text-center">
-        <h1 className="text-4xl font-bold text-blue-900">Get in Touch With Us</h1>
+        <h1 className="text-4xl font-bold text-orange-600">Get in Touch With Us</h1>
         <p className="mt-4 text-gray-700 max-w-xl mx-auto">
           We&apos;re here to help you 24/7. Feel free to reach out by phone, WhatsApp, or submit the contact form below.
         </p>
@@ -29,8 +30,8 @@ export default function ContactPage() {
           {/* Contact Info */}
           <div className="text-gray-800 space-y-6">
             <div>
-              <h2 className="text-2xl font-semibold text-blue-800 mb-2">📞 Phone</h2>
-              <p className="text-lg">+91 98765 43210</p>
+              <h2 className="text-2xl font-semibold text-blue-800 mb-2"><Phone size={25} className='inline'/> Phone</h2>
+              <a href='tel:+919876543210' className="text-lg">+91 98765 43210</a>
             </div>
             <div>
               <h2 className="text-2xl font-semibold text-green-700 mb-2">💬 WhatsApp</h2>

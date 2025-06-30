@@ -106,7 +106,7 @@ export default function Home() {
 
 
       {/* Contact CTA */}
-      <section className="bg-blue-700 text-white py-12 px-6 text-center">
+      <section className="bg-orange-100 text-black py-12 px-6 text-center">
         <h2 className="text-2xl font-semibold">Need Help? Call us now at <a href="tel:+919000000000" className="underline">+91 90000 00000</a></h2>
         <p className="mt-2">We&apos;re just one call away from caring for your family.</p>
       </section>
