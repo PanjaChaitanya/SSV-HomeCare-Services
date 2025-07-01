@@ -105,7 +105,7 @@ const faqs = [
     }
   ];
 
-       const FAQ = () => {
+  const FAQ = () => {
   return (
     <>
       <div className="min-h-screen bg-gradient-to-br from-white via-blue-50 to-blue-100">

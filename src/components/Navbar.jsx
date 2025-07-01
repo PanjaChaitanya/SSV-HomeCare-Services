@@ -96,7 +96,7 @@ const Navbar = () => {
                     className={`transition-colors hover:text-orange-600 font-semibold text-sm uppercase ${
                       isActive(item.href)
                         ? 'text-orange-500 border-b-2 border-orange-500 '
-                        : 'text-gray-700'
+                        : 'text-gray-800'
                     }`}
                   >
                     {item.name}
