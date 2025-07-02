@@ -1,53 +1,86 @@
 'use client'
 import React from 'react'
 import { motion } from 'framer-motion'
-import { Users, Clock, Star } from 'lucide-react';
+import { Users, Clock, Star } from 'lucide-react'
 
-const whyUs =[
-    {
-      icon: <Users className="w-10 h-10 text-red-500" />, title: 'Experienced & Verified',
-      description: 'All our staff are background-checked and Experienced'
-    },
-    {
-      icon: <Users className="w-10 h-10 text-blue-500" />, title: 'Family',
-      description: 'We consider ourselves part of your extended family'
-    },
-    {
-      icon: <Star className="w-10 h-10 text-green-500" />, title: '10+ Years Experience',
-      description: 'Trusted by hundreds of families with over a decade of reliable service.'
-    },
-    {
-      icon: <Clock className="w-10 h-10 text-orange-500" />, title: '24/7 Availability',
-      description: 'Available 24/7 with unwavering commitment to quality care'
-    }
+const whyUs = [
+  {
+    icon: <Users className="w-8 h-8 text-orange-500" />,
+    title: 'Experienced & Verified',
+    description:
+      'Our caregivers are verified, trained, and dedicated to providing compassionate, professional support.',
+  },
+  {
+    icon: <Star className="w-8 h-8 text-yellow-500" />,
+    title: '10+ Years of Trust',
+    description:
+      'Over a decade of reliable service and thousands of satisfied families who trust our quality care.',
+  },
+  {
+    icon: <Clock className="w-8 h-8 text-blue-500" />,
+    title: '24/7 Availability',
+    description:
+      'We&apos;re always here for you, offering around-the-clock support and quick response to your needs.',
+  },
 ]
 
 const WhyUsSection = () => {
   return (
-    <div className="max-w-7xl mx-auto px-4 py-10">
-      <h2 className="text-3xl md:text-4xl text-center font-bold text-orange-500 mb-8">
-        Why Choose Us
-      </h2>
+    <section className="relative bg-gradient-to-b from-white via-gray-50 to-white py-20 overflow-hidden">
+      {/* background accents */}
+      <div className="absolute top-[-100px] right-[-100px] w-[350px] h-[350px] bg-orange-200 blur-[120px] rounded-full opacity-30"></div>
+      <div className="absolute bottom-[-100px] left-[-100px] w-[350px] h-[350px] bg-blue-200 blur-[120px] rounded-full opacity-30"></div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 animateClass">
-        {whyUs.map((value, idx) => (
-          <motion.div
-            key={idx}
-            initial={{ opacity: 0, scale: 0.8, y: 50 }}
-            whileInView={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: idx * 0.2 }}
-            viewport={{ once: false, amount: 0.3 }}
-            className="bg-white text-center rounded-xl shadow-md hover:shadow-2xl hover:bg-green-50 transform hover:-translate-y-2 transition-all duration-300 ease-linear p-8"
-          >
-            <div className="flex justify-center mb-4 text-4xl text-lime-700">
-              {value.icon}
-            </div>
-            <h3 className="font-semibold text-xl mb-2 text-gray-900">{value.title}</h3>
-            <p className="text-sm text-gray-700">{value.description}</p>
-          </motion.div>
-        ))}
+      <div className="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row items-center gap-16 relative z-10">
+        {/* Left Content */}
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+          className="flex-1 text-center lg:text-left"
+        >
+          <h2 className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-orange-500 to-orange-200 bg-clip-text text-transparent mb-6 leading-snug">
+            Why Choose <br /> Our Home Care Services
+          </h2>
+          <p className="text-gray-700 text-lg leading-relaxed mb-6">
+            We believe care should be personal, professional, and compassionate.
+            Our dedicated caregivers ensure your loved ones are in safe, reliable hands — 24 hours a day, 7 days a week.
+          </p>
+          {/* <button className="px-6 py-3 bg-gradient-to-r from-orange-500 to-blue-600 text-white rounded-full font-medium shadow-lg hover:shadow-xl transition-transform duration-300 hover:scale-105">
+            Learn More
+          </button> */}
+        </motion.div>
+
+        {/* Right Cards Section */}
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+          className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-6"
+        >
+          {whyUs.map((item, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: idx * 0.2 }}
+              className="relative bg-white/80 backdrop-blur-xl border border-gray-100 rounded-2xl p-6 shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group"
+            >
+              <div className="flex items-center justify-center w-14 h-14 mb-4 mx-auto sm:mx-0">
+                {item.icon}
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2 text-center sm:text-left group-hover:text-orange-500 transition-colors">
+                {item.title}
+              </h3>
+              <p className="text-gray-600 text-sm text-center sm:text-left">
+                {item.description}
+              </p>
+              <div className="absolute inset-0 bg-gradient-to-br from-orange-100/0 via-transparent to-blue-100/0 opacity-0 group-hover:opacity-100 rounded-2xl transition-opacity"></div>
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
-    </div>
+    </section>
   )
 }
 

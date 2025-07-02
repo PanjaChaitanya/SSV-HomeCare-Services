@@ -30,7 +30,7 @@ export default function Home() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-15 bg-gradient-to-b from-green-50 to-gray-200 px-6 transition-all ease-in-out">
+      <section className="py-15 transition-all ease-in-out">
         <WhyUsSection/>
       </section>
 
