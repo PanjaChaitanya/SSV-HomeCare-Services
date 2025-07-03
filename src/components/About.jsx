@@ -12,14 +12,14 @@ const About = () => {
         {/* Youtube frame */}
         <div className="w-full md:w-1/2">
           <div className="relative pb-[56.25%] h-0 overflow-hidden rounded-lg shadow-lg">
-            <iframe
+            {/* <iframe
               className="absolute top-0 left-0 w-full h-full"
               src="https://www.youtube.com/embed/29C2crcXn-E?si=uzXeuur0E_lnZL5l"
               title="YouTube video player"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerPolicy="strict-origin-when-cross-origin"
               allowFullScreen
-            ></iframe>
+            ></iframe> */}
           </div>
         </div>
 
