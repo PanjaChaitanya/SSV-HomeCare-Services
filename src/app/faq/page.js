@@ -4,15 +4,15 @@ import Link from 'next/link';
 import { Phone, Mail, Clock } from 'lucide-react';
 
 export const metadata = {
-  title: "Frequently Asked Questions | Sri Siddi Vinayaka Home Care",
+  title: "Frequently Asked Questions | Sri Siddhi Vinayaka Home Care",
   description: "Explore answers to commonly asked questions about our home care services including childcare, elder care, housekeeping, and more.",
   alternates: {
-    canonical: "https://yourdomain.com/faq",
+    canonical: "https://ssvhomecareservices.vercel.app/faq",
   },
   openGraph: {
-    title: "Frequently Asked Questions | Sri Siddi Vinayaka Home Care",
+    title: "Frequently Asked Questions | Sri Siddhi Vinayaka Home Care",
     description: "Get detailed answers about our care services, pricing, support policies, and more.",
-    url: "https://yourdomain.com/faq",
+    url: "https://ssvhomecareservices.vercel.app/faq",
   },
 };
 

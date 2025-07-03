@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { Metadata } from 'next';
 import { Heart, Users, Clock, CircleCheck } from 'lucide-react';
 
 export const metadata = {
@@ -12,11 +11,11 @@ export const metadata = {
     title: 'About Us | Sri Siddhi Vinayaka Home Care Services',
     description:
       'Learn about our compassionate team, values, and mission at Sri Siddhi Vinayaka Home Care Services.',
-    url: 'https://srisiddhivinayakahomecareservices.vercel.app/about',
+    url: 'https://ssvhomecareservices.vercel.app/about',
     type: 'website'
   },
   alternates: {
-    canonical: 'https://srisiddhivinayakahomecareservices.vercel.app/about'
+    canonical: 'https://ssvhomecareservices.vercel.app/about'
   }
 };
 

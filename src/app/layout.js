@@ -11,6 +11,8 @@ export const metadata = {
     'Trusted in-home care for elders, children, and bedridden patients. Serving your family with love and dignity.',
   keywords: [
     'home care services',
+    'best home care services near me',
+    'best home care services in bhimavaram',
     'elder care',
     'child care',
     'bedridden patient care',

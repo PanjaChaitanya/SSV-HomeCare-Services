@@ -11,17 +11,17 @@ import {
 } from 'lucide-react';
 
 export const metadata = {
-  title: 'Our Services | Sri Siddi Vinayaka Home Care',
+  title: 'Our Services | Sri Siddhi Vinayaka Home Care',
   description:
     'Explore our trusted in-home care services - from childcare to elderly support, patient care, housekeeping, and cooking assistance.',
   alternates: {
-    canonical: 'https://yourdomain.com/services',
+    canonical: 'https://ssvhomecareservices.vercel.app/services',
   },
   openGraph: {
-    title: 'Services | Sri Siddi Vinayaka Home Care',
+    title: 'Services | Sri Siddhi Vinayaka Home Care',
     description:
       'Tailored care solutions including elder care, child care, bedridden patient care, and household help.',
-    url: 'https://yourdomain.com/services',
+    url: 'https://ssvhomecareservices.vercel.app/services',
   },
 };
 

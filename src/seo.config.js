@@ -1,14 +1,14 @@
 const SEO = {
-  title: "Sri Siddi Vinayaka Home Care Services",
+  title: "Sri Siddhi Vinayaka Home Care Services",
   description:
     "Trusted in-home care for elders, children, and bedridden patients. 24/7 personalized care with compassion.",
-  canonical: "https://yourdomain.com", // Replace with your real domain later
+  canonical: "https://ssvhomecareservices.vercel.app", // Replace with real domain later
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: "https://yourdomain.com",
-    siteName: "Sri Siddi Vinayaka Home Care Services",
-    title: "Home Care Services in Andhra | Sri Siddi Vinayaka",
+    url: "https://ssvhomecareservices.vercel.app",
+    siteName: "Sri Siddhi Vinayaka Home Care Services",
+    title: "Home Care Services in Andhra | Sri Siddhi Vinayaka",
     description:
       "Professional child care, elder care, bedridden care, and housekeeping services tailored to your family's needs.",
     images: [
