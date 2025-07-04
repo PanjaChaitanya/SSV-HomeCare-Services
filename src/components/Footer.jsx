@@ -3,7 +3,6 @@ import Link from 'next/link'
 import { Phone, Clock,Users,Mail,Instagram, MessageCircle, Facebook } from 'lucide-react'
 export default function Footer() {
   return (
-    <>
       <footer className="bg-gray-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -46,95 +45,80 @@ export default function Footer() {
             {/* Social Links */}
             <div className="flex space-x-6">
               <a
-                href="https://www.facebook.com/YourPage"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-blue-600 transition-colors"
-                aria-label="Facebook"
-              >
+                href="https://www.facebook.com/YourPage" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 transition-colors" aria-label="Facebook">
                 <Facebook size={24} />
               </a>
               <a
-                href="https://wa.me/919876543210"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-green-500 transition-colors"
-                aria-label="WhatsApp"
-              >
+                href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" className="hover:text-green-500 transition-colors" aria-label="WhatsApp">
                 <MessageCircle size={24} />
               </a>
               <a
-                href="https://www.instagram.com/yourprofile"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-300 hover:text-pink-500 transition-colors"
-                aria-label="Instagram"
-              >
+                href="https://www.instagram.com/yourprofile" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-pink-500 transition-colors" aria-label="Instagram">
                 <Instagram size={24} />
               </a>
             </div>
           </div>
-
-          {/* Quick Links */}
-          <div>
-            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
-            <ul className="space-y-2">
-              <li>
-                <Link href="/" className="text-gray-300 hover:text-yellow-300 transition-colors">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link href="/about" className="text-gray-300 hover:text-yellow-300 transition-colors">
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link href="/services" className="text-gray-300 hover:text-yellow-300 transition-colors">
-                  Our Services
-                </Link>
-              </li>
-              <li>
-                <Link href="/testimonials" className="text-gray-300 hover:text-yellow-300 transition-colors">
-                  Testimonials
-                </Link>
-              </li>
-              <li>
-                <Link href="/faq" className="text-gray-300 hover:text-yellow-300 transition-colors">
-                  FAQ
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="text-gray-300 hover:text-yellow-300 transition-colors">
-                  Contact Us
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Services */}
-          <div>
-            <h4 className="text-lg font-semibold mb-4">Our Services</h4>
-            <ul className="space-y-2">
-              <li className="text-gray-300">Child Care</li>
-              <li className="text-gray-300">Elder Care</li>
-              <li className="text-gray-300">Housekeeping</li>
-              <li className="text-gray-300">Cooking Support</li>
-              <li className="text-gray-300">Bedridden Patient Care</li>
-            </ul>
-            
-            {/* Trust Badges */}
-            <div className="mt-6 space-y-2 text-green-400">
-              <div className="flex items-center space-x-2 text-care-green-400">
-                <Users size={16} />
-                <span className="text-sm">Certified Caregivers</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <Clock size={16} />
-                <span className="text-sm">10+ Years Experience</span>
-              </div>
+          <div className='grid grid-cols-2 sm:gap-5'>
+            {/* Quick Links */}
+            <div>
+              <h4 className="text-lg font-semibold text-orange-500 mb-4">Quick Links</h4>
+              <ul className="space-y-2">
+                <li>
+                  <Link href="/" className="text-gray-300 hover:text-yellow-300 transition-colors">
+                    Home
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/about" className="text-gray-300 hover:text-yellow-300 transition-colors">
+                    About Us
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/services" className="text-gray-300 hover:text-yellow-300 transition-colors">
+                    Our Services
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/testimonials" className="text-gray-300 hover:text-yellow-300 transition-colors">
+                    Testimonials
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/faq" className="text-gray-300 hover:text-yellow-300 transition-colors">
+                    FAQ
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/contact" className="text-gray-300 hover:text-yellow-300 transition-colors">
+                    Contact Us
+                  </Link>
+                </li>
+              </ul>
             </div>
+            {/* Services */}
+            <div>
+              <h4 className="text-lg font-semibold text-orange-500 mb-4">Our Services</h4>
+              <ul className="space-y-2">
+                <li className="text-gray-300">Child Care</li>
+                <li className="text-gray-300">Elder Care</li>
+                <li className="text-gray-300">Housekeeping</li>
+                <li className="text-gray-300">Cooking Support</li>
+                <li className="text-gray-300">Bedridden Patient Care</li>
+              </ul>
+            </div>
+            {/* Trust Badges */}
+              <div className="mt-6 col-span-2 space-y-2 flex flex-col items-center text-green-400">
+                <div className="flex items-center space-x-2 text-care-green-400">
+                  <Users size={16} />
+                  <span className="text-sm">Certified Caregivers</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <Clock size={16} />
+                  <span className="text-sm">10+ Years Experience</span>
+                </div>
+              </div>
           </div>
+          
         </div>
 
         {/* Bottom Bar */}
@@ -153,6 +137,5 @@ export default function Footer() {
         </div>
       </div>
     </footer>
-    </>
   )
 }

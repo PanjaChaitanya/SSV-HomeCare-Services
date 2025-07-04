@@ -1,29 +1,95 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import {
-  Users,
-  User,
-  Home,
-  Clock,
-  Phone,
-  Check,
-  Star,
-} from 'lucide-react';
+import {Users, User, Home, Clock, Phone, Check, Star} from 'lucide-react';
 
 export const metadata = {
-  title: 'Our Services | Sri Siddhi Vinayaka Home Care',
+  title: "Our Services | Sri Siddhi Vinayaka Home Care",
   description:
-    'Explore our trusted in-home care services - from childcare to elderly support, patient care, housekeeping, and cooking assistance.',
+    "Explore our trusted in-home care services - from childcare to elderly support, patient care, housekeeping, and cooking assistance.",
   alternates: {
-    canonical: 'https://ssvhomecareservices.vercel.app/services',
+    canonical: "https://ssvhomecareservices.vercel.app/services",
   },
   openGraph: {
-    title: 'Services | Sri Siddhi Vinayaka Home Care',
+    title: "Services | Sri Siddhi Vinayaka Home Care",
     description:
-      'Tailored care solutions including elder care, child care, bedridden patient care, and household help.',
-    url: 'https://ssvhomecareservices.vercel.app/services',
+      "Tailored care solutions including elder care, child care, bedridden patient care, and household help.",
+    url: "https://ssvhomecareservices.vercel.app/services",
+    siteName: "Sri Siddhi Vinayaka Home Care Services",
+    images: [
+      {
+        url: "https://ssvhomecareservices.vercel.app/images/og-services.webp",
+        width: 1200,
+        height: 630,
+        alt: "Sri Siddhi Vinayaka Services",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
+
+/**
+ * JSON-LD: Organization + Service structured data
+ * Note: We include a basic Service schema for each public service.
+ * Keep descriptions concise (avoid duplicate verbose content).
+ */
+const ORG_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Sri Siddhi Vinayaka Home Care Services",
+  url: "https://ssvhomecareservices.vercel.app",
+  logo: "https://ssvhomecareservices.vercel.app/images/logo.png",
+  description: "Compassionate, trusted in-home care services since 2013 in Bangalore, India.",
+  foundingDate: "2013",
+  sameAs: [
+    // update to real social links
+    "https://www.facebook.com/your-page",
+    "https://www.instagram.com/your-page"
+  ],
+};
+
+const SERVICES_SCHEMA = [
+  {
+    "@type": "Service",
+    name: "Child Care Services",
+    description:
+      "Professional, nurturing care for children of all ages with trained, loving caregivers who prioritize safety and development.",
+    provider: { "@type": "Organization", name: "Sri Siddhi Vinayaka Home Care Services" }
+  },
+  {
+    "@type": "Service",
+    name: "Elder Care Services",
+    description:
+      "Compassionate dignified care for seniors including personal care, companionship, and medication support.",
+    provider: { "@type": "Organization", name: "Sri Siddhi Vinayaka Home Care Services" }
+  },
+  {
+    "@type": "Service",
+    name: "Bedridden Patient Care",
+    description:
+      "Specialized medical and personal care for bedridden patients including wound care and repositioning.",
+    provider: { "@type": "Organization", name: "Sri Siddhi Vinayaka Home Care Services" }
+  },
+  {
+    "@type": "Service",
+    name: "Housekeeping Services",
+    description:
+      "Deep cleaning and domestic help to keep homes tidy, sanitized, and comfortable.",
+    provider: { "@type": "Organization", name: "Sri Siddhi Vinayaka Home Care Services" }
+  },
+  {
+    "@type": "Service",
+    name: "Cooking / Meal Preparation",
+    description:
+      "Healthy, home-cooked meals prepared according to dietary needs and family preferences.",
+    provider: { "@type": "Organization", name: "Sri Siddhi Vinayaka Home Care Services" }
+  }
+];
 
 export default function Services()  {
   const services = [
@@ -123,6 +189,13 @@ export default function Services()  {
 
   return (
     <>
+    {/* JSON-LD structured data rendered server-side */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([ORG_SCHEMA, ...SERVICES_SCHEMA]),
+        }}
+      />
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-care-blue-50 via-white to-care-cream-50 py-16 lg:py-20">
         <div className="container mx-auto px-4 text-center">
