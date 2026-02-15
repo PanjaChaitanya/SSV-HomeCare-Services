@@ -1,26 +1,32 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import {Users, User, Home, Clock, Phone, Check, Star} from 'lucide-react';
+import { 
+  Users, User, Home, Clock, Phone, Check, Star, 
+  ShieldCheck, Heart, MapPin, ChevronDown 
+} from 'lucide-react';
+
+// --- SEO METADATA & CONFIGURATION ---
 
 export const metadata = {
-  title: "Our Services | Sri Siddhi Vinayaka Home Care",
-  description:
-    "Explore our trusted in-home care services - from childcare to elderly support, patient care, housekeeping, and cooking assistance.",
+  title: "Best Home Care Services | Child, Elder & Patient Care",
+  description: "Professional in-home care services in Bangalore. Verified caregivers for elderly care, bedridden patients, babysitting, and housekeeping. 24/7 support available.",
+  keywords: ["home care services bangalore", "elderly care at home", "patient care services", "babysitting bangalore", "housekeeping services", "bedridden patient care"],
   alternates: {
     canonical: "https://ssvhomecareservices.vercel.app/services",
   },
   openGraph: {
-    title: "Services | Sri Siddhi Vinayaka Home Care",
-    description:
-      "Tailored care solutions including elder care, child care, bedridden patient care, and household help.",
+    title: "Trusted Home Care Services in Bangalore | SSV Care",
+    description: "Compassionate care for your loved ones. Expert child care, elder support, and patient care delivered to your doorstep.",
     url: "https://ssvhomecareservices.vercel.app/services",
     siteName: "Sri Siddhi Vinayaka Home Care Services",
+    locale: 'en_IN',
+    type: 'website',
     images: [
       {
-        url: "https://ssvhomecareservices.vercel.app/images/og-services.webp",
+        url: "https://ssvhomecareservices.vercel.app/images/og-services.webp", // Ensure this image exists
         width: 1200,
         height: 630,
-        alt: "Sri Siddhi Vinayaka Services",
+        alt: "Caregiver helping an elderly person",
       },
     ],
   },
@@ -30,276 +36,381 @@ export const metadata = {
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 };
 
-/**
- * JSON-LD: Organization + Service structured data
- * Note: We include a basic Service schema for each public service.
- * Keep descriptions concise (avoid duplicate verbose content).
- */
-const ORG_SCHEMA = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  name: "Sri Siddhi Vinayaka Home Care Services",
-  url: "https://ssvhomecareservices.vercel.app",
-  logo: "https://ssvhomecareservices.vercel.app/images/logo.png",
-  description: "Compassionate, trusted in-home care services since 2013 in Bangalore, India.",
-  foundingDate: "2013",
-  sameAs: [
-    // update to real social links
-    "https://www.facebook.com/your-page",
-    "https://www.instagram.com/your-page"
-  ],
-};
+// --- DATA DEFINITIONS ---
 
-const SERVICES_SCHEMA = [
+const SERVICES = [
   {
-    "@type": "Service",
-    name: "Child Care Services",
-    description:
-      "Professional, nurturing care for children of all ages with trained, loving caregivers who prioritize safety and development.",
-    provider: { "@type": "Organization", name: "Sri Siddhi Vinayaka Home Care Services" }
+    id: "child-care",
+    title: 'Child Care & Babysitting',
+    shortDesc: "Nurturing care for your little ones.",
+    icon: Users,
+    description: 'Professional, nurturing care for children of all ages. Our trained babysitters prioritize safety, educational development, and fun, giving you peace of mind while you work or rest.',
+    features: [
+      'Background-verified babysitters',
+      'Age-appropriate educational play',
+      'Newborn & infant specialization',
+      'Homework help & tutoring',
+      'Meal preparation & feeding',
+      'Emergency safety trained'
+    ],
+    availability: '24/7, Weekends, Holidays',
+    image: '/images/child-care.webp', // Ensure path is correct
+    color: 'text-pink-600',
+    bg: 'bg-pink-50'
   },
   {
-    "@type": "Service",
-    name: "Elder Care Services",
-    description:
-      "Compassionate dignified care for seniors including personal care, companionship, and medication support.",
-    provider: { "@type": "Organization", name: "Sri Siddhi Vinayaka Home Care Services" }
+    id: "elder-care",
+    title: 'Elder Care Services',
+    shortDesc: "Dignified companionship for seniors.",
+    icon: User,
+    description: 'Compassionate support for seniors allowing them to age gracefully at home. We assist with daily living activities, medication, and provide the companionship they deserve.',
+    features: [
+      'Personal hygiene & grooming',
+      'Medication management',
+      'Dementia & Alzheimer’s support',
+      'Assisted mobility & walking',
+      'Doctor appointment escort',
+      'Emotional companionship'
+    ],
+    availability: 'Live-in (24hr) or Hourly',
+    image: '/images/services/elder-care.jpg',
+    color: 'text-teal-600',
+    bg: 'bg-teal-50'
   },
   {
-    "@type": "Service",
-    name: "Bedridden Patient Care",
-    description:
-      "Specialized medical and personal care for bedridden patients including wound care and repositioning.",
-    provider: { "@type": "Organization", name: "Sri Siddhi Vinayaka Home Care Services" }
+    id: "patient-care",
+    title: 'Bedridden Patient Care',
+    shortDesc: "Medical-grade support for recovery.",
+    icon: Heart,
+    description: 'Specialized care for patients recovering from surgery, stroke, or chronic illness. Our caretakers are trained in handling bedridden patients with medical precision and empathy.',
+    features: [
+      'Bedsore prevention (Turning)',
+      'Catheter & diaper care',
+      'Vital signs monitoring',
+      'Sponge bath & hygiene',
+      'Tube feeding assistance',
+      'Post-operative support'
+    ],
+    availability: '24/7 Live-in Recommended',
+    image: '/images/services/bed-ridden.jpg',
+    color: 'text-blue-600',
+    bg: 'bg-blue-50'
   },
   {
-    "@type": "Service",
-    name: "Housekeeping Services",
-    description:
-      "Deep cleaning and domestic help to keep homes tidy, sanitized, and comfortable.",
-    provider: { "@type": "Organization", name: "Sri Siddhi Vinayaka Home Care Services" }
+    id: "housekeeping",
+    title: 'Housekeeping & Cleaning',
+    shortDesc: "Spotless homes for healthy living.",
+    icon: Home,
+    description: 'Comprehensive domestic help to keep your environment sanitary and organized. We handle the chores so you can focus on your family.',
+    features: [
+      'Deep cleaning & sanitization',
+      'Laundry & ironing',
+      'Kitchen organization',
+      'Dusting & vacuuming',
+      'Bathroom disinfection',
+      'Custom cleaning schedules'
+    ],
+    availability: 'Daily, Weekly, Monthly',
+    image: 'https://images.unsplash.com/photo-1581578731117-104f2a41272c?auto=format&fit=crop&q=80&w=800',
+    color: 'text-orange-600',
+    bg: 'bg-orange-50'
   },
   {
-    "@type": "Service",
-    name: "Cooking / Meal Preparation",
-    description:
-      "Healthy, home-cooked meals prepared according to dietary needs and family preferences.",
-    provider: { "@type": "Organization", name: "Sri Siddhi Vinayaka Home Care Services" }
+    id: "cooking",
+    title: 'Home Cooking Services',
+    shortDesc: "Healthy meals, made with love.",
+    icon: Clock,
+    description: 'Nutritious, home-cooked meals prepared in your kitchen. Our cooks accommodate dietary restrictions, regional preferences (North/South Indian), and family traditions.',
+    features: [
+      'Diet-specific meal planning',
+      'North & South Indian cuisines',
+      'Grocery management',
+      'Hygienic preparation',
+      'Party/Event cooking',
+      'Kitchen cleanup included'
+    ],
+    availability: 'Breakfast, Lunch, Dinner',
+    image: 'https://images.unsplash.com/photo-1556910103-1c02745a30bf?auto=format&fit=crop&q=80&w=800',
+    color: 'text-green-600',
+    bg: 'bg-green-50'
   }
 ];
 
-export default function Services()  {
-  const services = [
+const FAQS = [
+  {
+    q: "Are your caregivers background checked?",
+    a: "Yes, 100%. Every caregiver undergoes a rigorous identity check, address verification, and criminal background screening before entering your home."
+  },
+  {
+    q: "Do you provide services in all of Bangalore?",
+    a: "We cover major areas in Bangalore including Whitefield, Indiranagar, Koramangala, Jayanagar, Electronic City, and more."
+  },
+  {
+    q: "What if I am not satisfied with the caregiver?",
+    a: "Your satisfaction is priority. We offer a free replacement guarantee within the first 48 hours if the assigned caregiver does not meet your expectations."
+  }
+];
+
+// --- STRUCTURED DATA (JSON-LD) ---
+
+const JSON_LD = {
+  "@context": "https://schema.org",
+  "@graph": [
     {
-      title: 'Child Care Services',
-      icon: Users,
-      description: 'Professional, nurturing care for children of all ages with trained, loving caregivers who prioritize safety, development, and fun.',
-      features: [
-        'Certified and background-checked babysitters',
-        'Age-appropriate activities and educational play',
-        'Meal preparation and feeding assistance',
-        'Homework help and tutoring support',
-        'Transportation to activities and appointments',
-        'Overnight care available',
-        'Emergency response training',
-        'Regular progress updates to parents'
-      ],
-      availability: '24/7 including weekends and holidays',
-      image: '/images/child-care.webp'
+      "@type": "Organization",
+      "@id": "https://ssvhomecareservices.vercel.app/#organization",
+      "name": "Sri Siddhi Vinayaka Home Care Services",
+      "url": "https://ssvhomecareservices.vercel.app",
+      "logo": "https://ssvhomecareservices.vercel.app/images/logo.png",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+91-9876543210",
+        "contactType": "customer service",
+        "areaServed": "IN",
+        "availableLanguage": ["en", "kn", "hi"]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Bangalore",
+        "addressRegion": "Karnataka",
+        "addressCountry": "IN"
+      }
     },
+    ...SERVICES.map(service => ({
+      "@type": "Service",
+      "name": service.title,
+      "description": service.description,
+      "provider": { "@id": "https://ssvhomecareservices.vercel.app/#organization" },
+      "areaServed": { "@type": "City", "name": "Bangalore" },
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "INR",
+        "availability": "https://schema.org/InStock"
+      }
+    })),
     {
-      title: 'Elder Care Services',
-      icon: User,
-      description: 'Compassionate, dignified care for seniors including personal care, companionship, and specialized support for various health conditions.',
-      features: [
-        'Personal hygiene and grooming assistance',
-        'Medication reminders and management',
-        'Companion care and social interaction',
-        'Light housekeeping and laundry',
-        'Meal planning and preparation',
-        'Medical appointment accompaniment',
-        'Mobility assistance and physical therapy support',
-        'Specialized dementia and Alzheimer\'s care'
-      ],
-      availability: 'Live-in and hourly care options',
-      image: '/images/services/elder-care.jpg'
-    },
-    {
-      title: 'Bedridden Patient Care',
-      icon: User,
-      description: 'Specialized medical and personal care for patients who are bedridden or have limited mobility, ensuring comfort and dignity.',
-      features: [
-        'Personal hygiene and bathing assistance',
-        'Turning and repositioning to prevent bedsores',
-        'Medication administration and monitoring',
-        'Wound care and dressing changes',
-        'Physical therapy and mobility exercises',
-        'Nutritional support and feeding assistance',
-        '24/7 monitoring and emergency response',
-        'Coordination with healthcare providers'
-      ],
-      availability: '24/7 live-in care recommended',
-      image: '/images/services/bed-ridden.jpg'
-    },
-    {
-      title: 'Housekeeping Services',
-      icon: Home,
-      description: 'Comprehensive home cleaning and maintenance services to keep your home spotless, organized, and comfortable for your family.',
-      features: [
-        'Deep cleaning and regular maintenance',
-        'Kitchen and bathroom sanitization',
-        'Dusting, vacuuming, and mopping',
-        'Laundry and ironing services',
-        'Organizing and decluttering',
-        'Window and appliance cleaning',
-        'Eco-friendly cleaning products available',
-        'Customizable cleaning schedules'
-      ],
-      availability: 'Daily, weekly, bi-weekly, or monthly',
-      image: 'https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=600&h=400&fit=crop'
-    },
-    {
-      title: 'Cooking ',
-      icon: Clock,
-      description: 'Healthy, delicious meals prepared in your home according to dietary preferences, restrictions, and family traditions.',
-      features: [
-        'Nutritious meal planning and preparation',
-        'Accommodation of dietary restrictions',
-        'Traditional and regional cuisine specialties',
-        'Fresh ingredient shopping and selection',
-        'Kitchen organization and maintenance',
-        'Meal prep for busy families',
-        'Special occasion and party catering',
-        'Cooking lessons and recipe sharing'
-      ],
-      availability: 'Daily or as-needed basis',
-      image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&h=400&fit=crop'
+      "@type": "FAQPage",
+      "mainEntity": FAQS.map(faq => ({
+        "@type": "Question",
+        "name": faq.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": faq.a
+        }
+      }))
     }
-  ];
-
-  const serviceHighlights = [
-    { title: 'Background-Checked Staff', description: 'All caregivers undergo thorough background checks and verification', icon: Check },
-    { title: '24/7 Emergency Support', description: 'Round-the-clock availability for urgent care needs and emergencies', icon: Clock },
-    { title: 'Customized Care Plans', description: 'Personalized care plans tailored to individual needs and preferences', icon: Star },
-    { title: 'Licensed & Insured', description: 'Fully licensed and insured for your peace of mind and protection', icon: Users },
-  ];
-
-  return (
-    <>
-    {/* JSON-LD structured data rendered server-side */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify([ORG_SCHEMA, ...SERVICES_SCHEMA]),
-        }}
-      />
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-care-blue-50 via-white to-care-cream-50 py-16 lg:py-20">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-6">
-            Comprehensive Home Care Services
-          </h1>
-          <p className="text-xl text-gray-600 leading-relaxed mb-8">
-            From child care to elder care, housekeeping to specialized patient care - we provide trusted, professional services that keep your family comfortable and safe at home.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            {/* <Link href="/contact" className="bg-care-blue-600 text-white text-lg px-8 py-4 rounded-md font-semibold hover:bg-care-blue-700 transition">
-              Get Custom Care Plan
-            </Link> */}
-            <a href="tel:+919876543210" className="border-1 border-orange-400 text-lg px-6 py-2 rounded-md font-semibold hover:bg-green-500 hover:text-white transition flex items-center justify-center">
-              <Phone className="mr-2" size={20} /> Call for Consultation
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Highlights */}
-      <section className="py-10 bg-white">
-        <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-          {serviceHighlights.map((item, index) => {
-            const Icon = item.icon;
-            return (
-              <div key={index} className='text-center rounded-xl shadow-md hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 ease-linear p-8'>
-                <div className="w-16 h-16 border-2 border-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Icon className="text-orange-600" size={24} />
-                </div>
-                <h3 className="text-lg font-bold text-gray-800 mb-2">{item.title}</h3>
-                <p className="text-gray-600 text-sm">{item.description}</p>
-              </div>
-            );
-          })}
-        </div>
-      </section>
-
-      {/* Services */}
-      <section className="py-16 lg:py-20 bg-gray-50">
-        <div className="container mx-auto px-4 space-y-16">
-          {services.map((service, index) => {
-            const Icon = service.icon;
-            return (
-              <div key={index} id={`service${index}`} className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}>
-                <div className={`space-y-6 ${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
-                  <div className="flex items-center space-x-4">
-                    <div className="w-16 h-16 bg-gradient-to-br from-care-blue-500 to-care-blue-600 rounded-lg flex items-center justify-center">
-                      <Icon className="text-orange-500" size={28} />
-                    </div>
-                    <h2 className="text-3xl font-bold text-gray-800">{service.title}</h2>
-                  </div>
-                  <p className="text-lg text-gray-600 leading-relaxed">{service.description}</p>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    {service.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-start space-x-2">
-                        <Check size={16} className="text-green-600 mt-1" />
-                        <span className="text-gray-700 text-sm">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-
-                  <Link href="/contact" className="inline-block mt-4 font-bold bg-green-100 text-green-600 px-6 py-3 rounded-md hover:bg-care-blue-700 transition">
-                    Request This Service
-                  </Link>
-                </div>
-
-                <div className={`${index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}`}>
-                  <Image
-                    src={service.image}
-                    alt={service.title}
-                    width={800}
-                    height={400}
-                    className="rounded-2xl shadow-xl object-cover"
-                  />
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </section>
-
-      {/* Final CTA */}
-      <section className="py-16 lg:py-20 bg-gradient-to-r from-care-blue-600 to-care-blue-700 text-gray-500 text-center">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-            Ready to Get Started?
-          </h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Contact us today for a free consultation and let us create a personalized care plan that meets your family&apos;s unique needs and budget.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact" className="bg-gray-500 text-blue-300 hover:bg-gray-100 text-lg px-8 py-4 rounded-md font-semibold">
-              Get Free Consultation
-            </Link>
-            <a href="tel:+919876543210" className="border-2 border-gray-600 text-gray-500 hover:bg-white hover:text-care-blue-600 text-lg px-8 py-4 rounded-md font-semibold flex items-center justify-center">
-              <Phone className="mr-2" size={20} /> Call: +91 98765 43210
-            </a>
-          </div>
-        </div>
-      </section>
-    </>
-  );
+  ]
 };
 
+// --- COMPONENTS ---
 
+export default function ServicesPage() {
+  return (
+    <main className="min-h-screen bg-gray-50 selection:bg-blue-100 selection:text-blue-900">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }}
+      />
+
+      {/* HEADER HERO */}
+      <section className="relative pt-20 pb-16 lg:pt-32 lg:pb-24 overflow-hidden bg-white">
+        <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] opacity-50" />
+        
+        <div className="container relative mx-auto px-4 text-center z-10">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-sm font-medium mb-6 animate-fade-in-up">
+            <Star size={14} className="fill-blue-700" />
+            <span>Trusted by 1000+ Families in Bangalore</span>
+          </div>
+          
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 tracking-tight mb-6">
+            Expert Care, Right at <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-teal-500">Your Doorstep</span>
+          </h1>
+          
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-10 leading-relaxed">
+            Professional child care, elderly support, and medical patient care tailored to your family's unique needs. 
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a 
+              href="tel:+919876543210" 
+              className="group flex items-center justify-center gap-3 bg-blue-600 hover:bg-blue-700 text-white text-lg px-8 py-4 rounded-xl font-bold transition-all shadow-lg shadow-blue-200 transform hover:-translate-y-1"
+            >
+              <Phone size={20} className="animate-pulse" />
+              <span>Call +91 98765 43210</span>
+            </a>
+            <Link 
+              href="/contact" 
+              className="flex items-center justify-center gap-2 bg-white border-2 border-gray-200 hover:border-blue-600 text-gray-700 hover:text-blue-600 text-lg px-8 py-4 rounded-xl font-bold transition-all"
+            >
+              Get a Free Quote
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* TRUST INDICATORS */}
+      <section className="bg-white border-y border-gray-100 py-8">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            {[
+              { label: 'Years Experience', val: '10+', icon: Clock },
+              { label: 'Verified Staff', val: '100%', icon: ShieldCheck },
+              { label: 'Happy Families', val: '1.5k+', icon: Users },
+              { label: 'Locations', val: 'Bangalore', icon: MapPin },
+            ].map((stat, i) => (
+              <div key={i} className="flex flex-col items-center gap-2">
+                <stat.icon className="w-6 h-6 text-gray-400 mb-1" />
+                <span className="text-3xl font-bold text-gray-900">{stat.val}</span>
+                <span className="text-sm font-medium text-gray-500 uppercase tracking-wider">{stat.label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* MAIN SERVICES LIST */}
+      <section className="py-20 bg-gray-50" id="services">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Our Premium Services</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">We don't just send staff; we send trained professionals who become a part of your extended family.</p>
+          </div>
+
+          <div className="space-y-24">
+            {SERVICES.map((service, index) => {
+              const isEven = index % 2 === 0;
+              const Icon = service.icon;
+
+              return (
+                <article 
+                  key={service.id} 
+                  id={service.id}
+                  className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-12 lg:gap-20 items-center`}
+                >
+                  {/* Image Side */}
+                  <div className="w-full lg:w-1/2 relative group">
+                    <div className={`absolute -inset-4 rounded-2xl opacity-70 blur-2xl transition duration-500 group-hover:opacity-100 ${service.bg.replace('bg-', 'bg-gradient-to-br from-white to-')}`}></div>
+                    <div className="relative overflow-hidden rounded-2xl shadow-2xl border-4 border-white">
+                      <Image
+                        src={service.image}
+                        alt={service.title + " in Bangalore"}
+                        width={800}
+                        height={600}
+                        className="object-cover w-full h-[300px] lg:h-[450px] transform transition duration-700 group-hover:scale-105"
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        quality={85}
+                      />
+                      {/* Floating Badge */}
+                      <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-sm p-4 rounded-xl shadow-lg border border-gray-100">
+                        <div className="flex items-center gap-3">
+                          <div className={`p-2 rounded-lg ${service.bg}`}>
+                            <Clock size={20} className={service.color} />
+                          </div>
+                          <div>
+                            <p className="text-xs text-gray-500 font-semibold uppercase">Availability</p>
+                            <p className="text-sm font-bold text-gray-900">{service.availability}</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Content Side */}
+                  <div className="w-full lg:w-1/2 space-y-6">
+                    <div className="flex items-center gap-3">
+                      <span className={`p-3 rounded-xl ${service.bg} ${service.color}`}>
+                        <Icon size={28} />
+                      </span>
+                      <h3 className="text-3xl font-bold text-gray-900">{service.title}</h3>
+                    </div>
+                    
+                    <p className="text-lg text-gray-600 leading-relaxed">
+                      {service.description}
+                    </p>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                      {service.features.map((feature, idx) => (
+                        <div key={idx} className="flex items-start gap-3">
+                          <div className="mt-1 min-w-[20px]">
+                            <Check size={18} className="text-green-500" />
+                          </div>
+                          <span className="text-gray-700 font-medium text-sm">{feature}</span>
+                        </div>
+                      ))}
+                    </div>
+
+                    <div className="pt-8">
+                      <Link 
+                        href="/contact" 
+                        className={`inline-flex items-center gap-2 font-bold px-8 py-3 rounded-lg text-white transition-all transform hover:-translate-y-1 shadow-md hover:shadow-lg ${service.color.replace('text-', 'bg-').replace('600', '600')} hover:${service.color.replace('text-', 'bg-').replace('600', '700')}`}
+                      >
+                        Book {service.title}
+                      </Link>
+                    </div>
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* SEO FAQ SECTION */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900">Frequently Asked Questions</h2>
+            <p className="text-gray-500 mt-2">Common questions about our home care services</p>
+          </div>
+          
+          <div className="space-y-4">
+            {FAQS.map((faq, index) => (
+              <details key={index} className="group bg-gray-50 rounded-xl p-4 [&_summary::-webkit-details-marker]:hidden open:bg-blue-50 transition-colors duration-300">
+                <summary className="flex cursor-pointer items-center justify-between gap-1.5 text-gray-900 font-bold">
+                  <h3 className="text-lg">{faq.q}</h3>
+                  <ChevronDown className="h-5 w-5 shrink-0 transition duration-300 group-open:-rotate-180 text-gray-500" />
+                </summary>
+                <p className="mt-4 leading-relaxed text-gray-700 pl-2 border-l-2 border-blue-400">
+                  {faq.a}
+                </p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FINAL CTA */}
+      <section className="bg-slate-900 py-20 relative overflow-hidden">
+        <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-blue-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+        <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-96 h-96 bg-teal-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+        
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            Ready to give your family the best care?
+          </h2>
+          <p className="text-slate-300 text-lg mb-10 max-w-2xl mx-auto">
+            Contact us today for a free consultation. We will assess your needs and create a personalized care plan that fits your budget.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="tel:+919876543210" className="bg-white text-slate-900 hover:bg-gray-100 text-lg px-10 py-4 rounded-xl font-bold transition-all shadow-xl">
+              Call Now
+            </a>
+            <Link href="/contact" className="border-2 border-slate-600 text-white hover:bg-slate-800 text-lg px-10 py-4 rounded-xl font-bold transition-all">
+              Request Callback
+            </Link>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+}

@@ -1,8 +1,8 @@
-// app/about/page.js
 import Founder from "./sections/Founder";
 import Values from "./sections/Values";
 import Credentials from "./sections/Credentials";
 import CTA from "./sections/CTA";
+import { History, ShieldCheck, HeartPulse } from "lucide-react";
 
 export const metadata = {
   title: "About Us | Sri Siddhi Vinayaka Home Care Services",
@@ -50,92 +50,71 @@ export const metadata = {
     },
   },
 };
-
 const ORGANIZATION_SCHEMA = {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  name: "Sri Siddhi Vinayaka Home Care Services",
-  url: "https://ssvhomecareservices.vercel.app",
-  logo: "https://ssvhomecareservices.vercel.app/images/logo.png",
-  description:
-    "Compassionate and trusted home care services since 2013 in Bangalore, India.",
-  foundingDate: "2013",
-  founder: {
+  "@type": "HomeAndConstructionBusiness", // More specific than Organization for local SEO
+  "name": "Sri Siddhi Vinayaka Home Care Services",
+  "founder": {
     "@type": "Person",
-    name: "Addagalla Ganapathi Rao",
+    "name": "Addagalla Ganapathi Rao",
+    "jobTitle": "Founder & Director"
   },
-  address: {
+  "areaServed": "Bangalore",
+  "address": {
     "@type": "PostalAddress",
-    addressLocality: "Bangalore",
-    addressRegion: "Karnataka",
-    addressCountry: "India",
+    "addressLocality": "Bangalore",
+    "addressRegion": "KA",
+    "addressCountry": "IN"
   },
-  sameAs: [
-    // add real social links
-    "https://www.facebook.com/your-page",
-    "https://www.instagram.com/your-page",
-  ],
+  "openingHours": "Mo-Su 00:00-23:59"
 };
 
 export default function AboutPage() {
   return (
     <>
-      {/* JSON-LD for Organization (server rendered) */}
       <script
         type="application/ld+json"
-        // Next.js allows server components to return script tags
         dangerouslySetInnerHTML={{ __html: JSON.stringify(ORGANIZATION_SCHEMA) }}
       />
 
-      <main className="min-h-screen bg-gradient-to-b from-white to-sky-50 text-gray-800">
-        {/* Hero / Founder Section */}
-        <section className="min-h-screen px-6 py-12 flex flex-col md:flex-row items-center justify-center gap-12">
-          <Founder />
+      <main className="overflow-x-hidden bg-white">
+        {/* Hero Section */}
+        <section className="relative pt-20 pb-12 md:pt-32 md:pb-24 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-sky-100 via-white to-white">
+          <div className="container mx-auto px-6 flex flex-col md:flex-row items-center gap-16">
+            <Founder />
+          </div>
         </section>
 
-        {/* Our Story */}
-        <section className="py-16 px-6 max-w-5xl mx-auto">
-          <h2 className="text-3xl font-semibold text-center mb-8">Our Story</h2>
-          <div className="space-y-6 text-gray-700">
-            <p>
-              Founded in 2013 by Mr. Addagalla Ganapathi Rao (B.Com), Sri Siddi Vinayaka Home
-              Care Services was born from a deep desire to improve the quality of life for
-              families in need of compassionate, professional in-home care.
-            </p>
+        {/* The Impact / Credentials Section */}
+        <section className="py-12 bg-white">
+          <Credentials />
+        </section>
 
-            <p>
-              What began with a small team and a big heart has grown into a trusted name in home
-              care, known for commitment, trust, and family values.
-            </p>
-
-            <p>
-              Our certified caregivers are handpicked and trained to deliver services that not only
-              meet but exceed expectations.
-            </p>
+        {/* Our Story - Redesigned as a Narrative */}
+        <section className="py-24 px-6 bg-slate-50">
+          <div className="max-w-4xl mx-auto">
+            <div className="flex items-center gap-3 mb-6 justify-center">
+              <History className="text-orange-600" size={32} />
+              <h2 className="text-4xl font-bold text-slate-900">A Decade of Dedication</h2>
+            </div>
+            
+            <div className="space-y-8 text-xl text-slate-700 leading-relaxed text-center">
+              <p>
+                Founded in <span className="font-bold text-sky-700">2013</span> by Mr. Addagalla Ganapathi Rao (B.Com), our journey began with a simple observation: families in Bangalore were struggling to find home care that combined professional medical standards with genuine human warmth.
+              </p>
+              <p className="bg-white p-8 rounded-2xl shadow-sm border-l-4 border-orange-500 italic">
+                "We didn't just want to provide a service; we wanted to provide a surrogate family member when you couldn't be there."
+              </p>
+              <p>
+                Over the last 10+ years, we have hand-picked and trained a workforce of caregivers who have become the backbone of home recovery and elderly support across the city.
+              </p>
+            </div>
           </div>
         </section>
 
         {/* Mission & Values */}
-        <section className="py-20 px-5 bg-white">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-3xl font-bold mb-4">Our Mission & Values</h2>
-            <p className="text-gray-600">We live by principles that reflect compassion, integrity, and care.</p>
-          </div>
+        <Values />
 
-          <Values />
-        </section>
-
-        {/* Credentials */}
-        <section className="py-20 bg-white">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-3xl font-bold mb-4">Our Credentials</h2>
-            <p className="text-gray-600">Certified, trained, and committed to excellence in home care</p>
-          </div>
-
-          <Credentials />
-        </section>
-
-        {/* CTA */}
         <CTA />
       </main>
     </>
