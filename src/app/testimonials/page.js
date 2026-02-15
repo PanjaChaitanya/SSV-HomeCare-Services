@@ -117,7 +117,7 @@ export default function TestimonialsPage() {
             Loved by Families Across <span className="text-orange-500">Andhra & Telangana</span>
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-10">
-            We don't just provide services; we build relationships. Here is what our extended family has to say.
+            We don&apos;t just provide services; we build relationships. Here is what our extended family has to say.
           </p>
 
           {/* Social Proof Stats */}
@@ -198,7 +198,7 @@ export default function TestimonialsPage() {
 
                 {/* Content */}
                 <p className="text-gray-600 leading-relaxed italic relative z-10">
-                  "{t.message}"
+                  &quot;{t.message}&quot;
                 </p>
               </div>
             ))}
