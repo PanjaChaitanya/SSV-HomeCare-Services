@@ -237,7 +237,7 @@ export default function ServicesPage() {
           </h1>
           
           <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-10 leading-relaxed">
-            Professional child care, elderly support, and medical patient care tailored to your family's unique needs. 
+            Professional child care, elderly support, and medical patient care tailored to your family&apos;s unique needs. 
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -283,7 +283,7 @@ export default function ServicesPage() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Our Premium Services</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">We don't just send staff; we send trained professionals who become a part of your extended family.</p>
+            <p className="text-gray-600 max-w-2xl mx-auto">We don&apos;t just send staff; we send trained professionals who become a part of your extended family.</p>
           </div>
 
           <div className="space-y-24">

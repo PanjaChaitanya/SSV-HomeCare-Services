@@ -47,7 +47,7 @@ export default function ContactPage() {
                   <Clock size={14} /> Available 24/7 for Emergencies
                 </div>
                 <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight mb-6">
-                  Let's talk about the <span className="text-orange-600">Care You Need</span>
+                  Let&apos;s talk about the <span className="text-orange-600">Care You Need</span>
                 </h1>
                 <p className="text-lg text-slate-600 mb-8">
                   Whether you need immediate nursing or want to plan long-term elder care, 

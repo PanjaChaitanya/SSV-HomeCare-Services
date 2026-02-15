@@ -126,7 +126,7 @@ const FAQ = () => {
           
           <h2 className="text-3xl font-bold mb-4 relative z-10">Still have questions?</h2>
           <p className="text-slate-400 mb-8 max-w-md mx-auto relative z-10">
-            Can't find the answer you're looking for? Please chat with our friendly team.
+            Can&apos;t find the answer you&apos;re looking for? Please chat with our friendly team.
           </p>
           
           <div className="grid sm:grid-cols-3 gap-6 relative z-10">

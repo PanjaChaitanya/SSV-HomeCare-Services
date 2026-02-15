@@ -103,7 +103,7 @@ export default function AboutPage() {
                 Founded in <span className="font-bold text-sky-700">2013</span> by Mr. Addagalla Ganapathi Rao (B.Com), our journey began with a simple observation: families in Bangalore were struggling to find home care that combined professional medical standards with genuine human warmth.
               </p>
               <p className="bg-white p-8 rounded-2xl shadow-sm border-l-4 border-orange-500 italic">
-                "We didn't just want to provide a service; we wanted to provide a surrogate family member when you couldn't be there."
+                &quot;We didn&apos;t just want to provide a service; we wanted to provide a surrogate family member when you couldn&apos;t be there.&quot;
               </p>
               <p>
                 Over the last 10+ years, we have hand-picked and trained a workforce of caregivers who have become the backbone of home recovery and elderly support across the city.
