@@ -1,9 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { 
-  Users, User, Home, Clock, Phone, Check, Star, 
-  ShieldCheck, Heart, MapPin, ChevronDown 
-} from 'lucide-react';
+import { Users, Clock, Phone, Check, Star, ShieldCheck, MapPin, ChevronDown } from 'lucide-react';
+import { SERVICES } from '@/data/services';
 
 // --- SEO METADATA & CONFIGURATION ---
 
@@ -45,106 +43,6 @@ export const metadata = {
     },
   },
 };
-
-// --- DATA DEFINITIONS ---
-
-const SERVICES = [
-  {
-    id: "child-care",
-    title: 'Child Care & Babysitting',
-    shortDesc: "Nurturing care for your little ones.",
-    icon: Users,
-    description: 'Professional, nurturing care for children of all ages. Our trained babysitters prioritize safety, educational development, and fun, giving you peace of mind while you work or rest.',
-    features: [
-      'Background-verified babysitters',
-      'Age-appropriate educational play',
-      'Newborn & infant specialization',
-      'Homework help & tutoring',
-      'Meal preparation & feeding',
-      'Emergency safety trained'
-    ],
-    availability: '24/7, Weekends, Holidays',
-    image: '/images/child-care.webp', // Ensure path is correct
-    color: 'text-pink-600',
-    bg: 'bg-pink-50'
-  },
-  {
-    id: "elder-care",
-    title: 'Elder Care Services',
-    shortDesc: "Dignified companionship for seniors.",
-    icon: User,
-    description: 'Compassionate support for seniors allowing them to age gracefully at home. We assist with daily living activities, medication, and provide the companionship they deserve.',
-    features: [
-      'Personal hygiene & grooming',
-      'Medication management',
-      'Dementia & Alzheimer’s support',
-      'Assisted mobility & walking',
-      'Doctor appointment escort',
-      'Emotional companionship'
-    ],
-    availability: 'Live-in (24hr) or Hourly',
-    image: '/images/services/elder-care.jpg',
-    color: 'text-teal-600',
-    bg: 'bg-teal-50'
-  },
-  {
-    id: "patient-care",
-    title: 'Bedridden Patient Care',
-    shortDesc: "Medical-grade support for recovery.",
-    icon: Heart,
-    description: 'Specialized care for patients recovering from surgery, stroke, or chronic illness. Our caretakers are trained in handling bedridden patients with medical precision and empathy.',
-    features: [
-      'Bedsore prevention (Turning)',
-      'Catheter & diaper care',
-      'Vital signs monitoring',
-      'Sponge bath & hygiene',
-      'Tube feeding assistance',
-      'Post-operative support'
-    ],
-    availability: '24/7 Live-in Recommended',
-    image: '/images/services/bed-ridden.jpg',
-    color: 'text-blue-600',
-    bg: 'bg-blue-50'
-  },
-  {
-    id: "housekeeping",
-    title: 'Housekeeping & Cleaning',
-    shortDesc: "Spotless homes for healthy living.",
-    icon: Home,
-    description: 'Comprehensive domestic help to keep your environment sanitary and organized. We handle the chores so you can focus on your family.',
-    features: [
-      'Deep cleaning & sanitization',
-      'Laundry & ironing',
-      'Kitchen organization',
-      'Dusting & vacuuming',
-      'Bathroom disinfection',
-      'Custom cleaning schedules'
-    ],
-    availability: 'Daily, Weekly, Monthly',
-    image: 'https://images.unsplash.com/photo-1581578731117-104f2a41272c?auto=format&fit=crop&q=80&w=800',
-    color: 'text-orange-600',
-    bg: 'bg-orange-50'
-  },
-  {
-    id: "cooking",
-    title: 'Home Cooking Services',
-    shortDesc: "Healthy meals, made with love.",
-    icon: Clock,
-    description: 'Nutritious, home-cooked meals prepared in your kitchen. Our cooks accommodate dietary restrictions, regional preferences (North/South Indian), and family traditions.',
-    features: [
-      'Diet-specific meal planning',
-      'North & South Indian cuisines',
-      'Grocery management',
-      'Hygienic preparation',
-      'Party/Event cooking',
-      'Kitchen cleanup included'
-    ],
-    availability: 'Breakfast, Lunch, Dinner',
-    image: 'https://images.unsplash.com/photo-1556910103-1c02745a30bf?auto=format&fit=crop&q=80&w=800',
-    color: 'text-green-600',
-    bg: 'bg-green-50'
-  }
-];
 
 const FAQS = [
   {
@@ -303,7 +201,7 @@ export default function ServicesPage() {
                     <div className="relative overflow-hidden rounded-2xl shadow-2xl border-4 border-white">
                       <Image
                         src={service.image}
-                        alt={service.title + " in Bangalore"}
+                        alt={service.imageAlt}
                         width={800}
                         height={600}
                         className="object-cover w-full h-[300px] lg:h-[450px] transform transition duration-700 group-hover:scale-105"
@@ -349,12 +247,18 @@ export default function ServicesPage() {
                       ))}
                     </div>
 
-                    <div className="pt-8">
+                    <div className="pt-8 flex flex-wrap items-center gap-3">
                       <Link 
                         href="/contact" 
                         className={`inline-flex items-center gap-2 font-bold px-8 py-3 rounded-lg text-white transition-all transform hover:-translate-y-1 shadow-md hover:shadow-lg ${service.color.replace('text-', 'bg-').replace('600', '600')} hover:${service.color.replace('text-', 'bg-').replace('600', '700')}`}
                       >
                         Book {service.title}
+                      </Link>
+                      <Link
+                        href={`/services/${service.id}`}
+                        className="inline-flex items-center gap-2 font-bold px-8 py-3 rounded-lg border border-gray-200 text-gray-700 hover:text-blue-700 hover:border-blue-300 transition-all"
+                      >
+                        View Details
                       </Link>
                     </div>
                   </div>
@@ -414,3 +318,4 @@ export default function ServicesPage() {
     </main>
   );
 }
+

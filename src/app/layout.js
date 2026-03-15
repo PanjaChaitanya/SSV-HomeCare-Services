@@ -1,9 +1,47 @@
 import './globals.css'
-import { Quintessential, Montserrat,Nunito } from 'next/font/google'
+import { Quintessential, Montserrat, Nunito } from 'next/font/google'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import { DefaultSeo } from 'next-seo'
-import SEO from '@/seo.config'
+
+const SITE_URL = 'https://ssvhomecareservices.vercel.app'
+
+const GLOBAL_SCHEMA = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': `${SITE_URL}/#organization`,
+      name: 'Sri Siddhi Vinayaka Home Care Services',
+      url: SITE_URL,
+      logo: `${SITE_URL}/images/logo.png`,
+      contactPoint: {
+        '@type': 'ContactPoint',
+        telephone: '+91-93819-52242',
+        contactType: 'customer service',
+        areaServed: 'IN',
+        availableLanguage: ['en', 'kn', 'hi'],
+      },
+    },
+    {
+      '@type': 'LocalBusiness',
+      '@id': `${SITE_URL}/#localbusiness`,
+      name: 'Sri Siddhi Vinayaka Home Care Services',
+      url: SITE_URL,
+      image: `${SITE_URL}/images/hero-banner.jpg`,
+      telephone: '+91-93819-52242',
+      areaServed: 'Bangalore',
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Bangalore',
+        addressRegion: 'Karnataka',
+        addressCountry: 'IN',
+      },
+      parentOrganization: {
+        '@id': `${SITE_URL}/#organization`,
+      },
+    },
+  ],
+}
 
 export const metadata = {
   title: 'Sri Siddhi Vinayaka Home Care Services',
@@ -60,10 +98,15 @@ const nunito = Nunito({
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en"
-    className={`${nunito.variable} ${montserrat.variable} ${quintessential.variable}`}
+    <html
+      lang="en"
+      className={`${nunito.variable} ${montserrat.variable} ${quintessential.variable}`}
     >
       <body className={nunito.className}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(GLOBAL_SCHEMA) }}
+        />
         <Navbar />
         <main className="mt-10">{children}</main>
         <Footer />
